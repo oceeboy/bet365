@@ -4,7 +4,7 @@ import { Footer } from '../navigations/footer';
 
 export function MainRootLayout({ children }: { children: ReactNode }) {
   return (
-    <section className="bg-[#111111]">
+    <section className="j">
       {children}
       <Footer />
       <BottomNavigation />
