@@ -9,8 +9,6 @@ export default function Home() {
   const [isTrue, setIsTrue] = useState<boolean>(true);
   return (
     <section className="  text-white">
-      <HeaderComp />
-
       {/* Pass state handlers to ControlHeaderUi */}
       <ControlHeaderUi activeTab={activeTab} setActiveTab={setActiveTab} />
 

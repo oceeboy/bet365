@@ -2,7 +2,7 @@
 
 export function HeaderComp() {
   return (
-    <header className="hgr-background min-w-[320px]  h-12 lg:h-17.5 transition-all duration-200 overflow-hidden ">
+    <header className="hgr-background sticky top-0 z-[100] min-w-[320px] h-12 lg:h-17.5 overflow-hidden transition-all duration-200">
       <div className="max-w-7xl mx-auto px-3 md:px-4 h-full flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center">
