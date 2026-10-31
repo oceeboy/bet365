@@ -160,13 +160,13 @@ export function WonTicketCard() {
                         height="13"
                         viewBox="0 0 13 13"
                       >
-                        <g fill="none" fill-rule="evenodd">
+                        <g fill="none" fillRule="evenodd">
                           <circle cx="6.5" cy="6.5" r="6.5" fill="#189970" />
                           <path
                             fill="#FFF"
-                            fill-rule="nonzero"
+                            fillRule="nonzero"
                             stroke="#FFF"
-                            stroke-width=".3"
+                            strokeWidth=".3"
                             d="M2.167 6.376 5.34 9.75l5.493-5.756-.663-.744-4.83 5.011-2.463-2.58z"
                           />
                         </g>
@@ -261,13 +261,13 @@ export function WonTicketCard() {
                         height="13"
                         viewBox="0 0 13 13"
                       >
-                        <g fill="none" fill-rule="evenodd">
+                        <g fill="none" fillRule="evenodd">
                           <circle cx="6.5" cy="6.5" r="6.5" fill="#189970" />
                           <path
                             fill="#FFF"
-                            fill-rule="nonzero"
+                            fillRule="nonzero"
                             stroke="#FFF"
-                            stroke-width=".3"
+                            strokeWidth=".3"
                             d="M2.167 6.376 5.34 9.75l5.493-5.756-.663-.744-4.83 5.011-2.463-2.58z"
                           />
                         </g>
