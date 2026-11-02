@@ -64,11 +64,13 @@
   /*
   */
   --text-16: 16px;
+  --icon-depositArrows: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 13'%3E%3Cpath fill='%23000' d='M4.586 7.802 6 9.212l1.414-1.41-.003-.003 3.271-3.278-1.414-1.41L7 5.383V0H5l.002 5.385-2.27-2.274-1.414 1.41 3.27 3.278-.002.003ZM12 13v-1.995H0V13h12Z'/%3E%3C/svg%3E");
 }
 
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  --icon-depositArrows: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 13'%3E%3Cpath fill='%23000' d='M4.586 7.802 6 9.212l1.414-1.41-.003-.003 3.271-3.278-1.414-1.41L7 5.383V0H5l.002 5.385-2.27-2.274-1.414 1.41 3.27 3.278-.002.003ZM12 13v-1.995H0V13h12Z'/%3E%3C/svg%3E");
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -214,6 +216,16 @@
     }
 
     to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes zsa-43 {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
       transform: rotate(360deg);
     }
   }

@@ -1,6 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { useState } from 'react';
+
 export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleClick = () => {
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000);
+  };
   return (
     <header className="hgr-background sticky top-0 z-[100] min-w-[320px] h-12 lg:h-17.5 overflow-hidden transition-all duration-200">
       <div className="max-w-7xl mx-auto px-3 md:px-4 h-full flex items-center justify-between">
@@ -48,10 +60,236 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
               </span>
             </button>
 
-            <button className="w-10 h-10 flex items-center transition-all duration-200 relative justify-center cursor-pointer focus:outline-none ">
-              <div className=" border rounded-full border-[#28ffbb] transition-all duration-200 ease-in-out opacity-60 hover:opacity-100 absolute size-8" />
-              <SumoIcon string="" />
-            </button>
+            <div className="relative">
+              <button className="w-12 h-12 flex items-center transition-all duration-200 relative justify-center cursor-pointer focus:outline-none ">
+                <div className=" border rounded-full border-[#28ffbb] transition-all duration-200 ease-in-out opacity-60 hover:opacity-100 absolute size-8" />
+                <SumoIcon string="" />
+              </button>
+              <div className="fixed top-12 right-0 bottom-0 left-0 z-[98] bg-black/60">
+                <div
+                  className="fixed top-12 right-0 z-[99] inline-block
+  w-full max-w-[375px] max-h-screen
+  overflow-x-hidden overflow-y-auto
+  overscroll-none
+  rounded-none
+  bg-[#f8f9fa]
+  text-left
+  shadow-[0_2px_10px_0_rgba(0,0,0,0.5)]
+  transform-gpu
+  transition-transform duration-150"
+                >
+                  <div>
+                    <div className="w-full">
+                      <div className="inline-flex w-full whitespace-nowrap text-[15px] leading-[17px] pt-5 pr-2.5 pl-[15px]">
+                        <div className="flex pr-5">
+                          <div className="inline-block align-top text-[#404040]">
+                            <div>
+                              <span className="block w-full text-[#404040] text-xs leading-4.25">
+                                Ryanpicks33
+                              </span>
+                              <span className="inline-flex w-full leading-[23px]">
+                                <span className="  text-[#404040] text-xl  leading-[23px] font-bold pr-[5px] inline-block ">
+                                  $8.56
+                                </span>
+                                <div className="relative flex h-10 w-[18px] cursor-pointer items-center self-center">
+                                  <span
+                                    onClick={handleClick}
+                                    className={`absolute  -top-2 -right-[11px] flex size-10 items-center justify-center ${
+                                      isAnimating ? 'animate-[zsa-43_1s_linear]' : ''
+                                    }`}
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="18"
+                                      height="18"
+                                      viewBox="0 0 18 18"
+                                    >
+                                      <g fill="none" fillRule="evenodd">
+                                        <path d="M0 0h18v18H0z" />
+
+                                        <path
+                                          fill="#333"
+                                          fillRule="nonzero"
+                                          d="M9 15a6 6 0 1 1 6-6h-1a5 5 0 1 0-5 5v1Zm7.375-6.997-1.256 1.566c-.381.436-.84.446-1.222-.007L12.619 8 12 8.787l1.282 1.566c.73.872 1.719.85 2.449.012L17 8.785l-.625-.782Z"
+                                        />
+                                      </g>
+                                    </svg>
+                                  </span>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-[15px] mb-[0.938rem] ml-auto min-w-[120px] text-right">
+                          <button
+                            className="flex h-11 min-w-[90px] flex-[0_1_auto] flex-col items-center justify-center rounded-[5px] border border-[#c3c3c3] bg-[#FAFBFC] px-3 py-1.5 text-[11px] leading-[14px] font-bold text-[#404040] cursor-pointer 
+                          
+
+  before:content-['']
+
+  before:block
+
+  before:h-[13px]
+
+  before:w-3
+
+  before:mb-1
+
+  before:shrink-0
+
+  before:bg-[#126e51]
+
+  before:[mask-image:var(--icon-depositArrows)]
+
+  before:[-webkit-mask-image:var(--icon-depositArrows)]
+
+  before:[mask-repeat:no-repeat]
+
+  before:[-webkit-mask-repeat:no-repeat]
+
+  before:[mask-position:center]
+
+  before:[-webkit-mask-position:center]
+
+  before:scale-y-[-1]
+                          "
+                          >
+                            Withdraw
+                          </button>
+                          <button
+                            className="
+  flex
+  h-11
+  min-w-[90px]
+  flex-1
+  flex-col
+  items-center
+  justify-center
+  rounded-[5px]
+  border
+  border-[#58d7af]
+  bg-[rgba(88,215,175,0.35)]
+  px-3
+  py-1.5
+  text-[11px]
+  leading-[14px]
+  font-bold
+  text-[#282828]
+  cursor-pointer
+
+  before:content-['']
+
+  before:block
+
+  before:h-[13px]
+
+  before:w-3
+
+  before:mb-1
+
+  before:shrink-0
+
+  before:bg-[#282828]
+
+  before:[mask-image:var(--icon-depositArrows)]
+
+  before:[-webkit-mask-image:var(--icon-depositArrows)]
+
+  before:[mask-repeat:no-repeat]
+
+  before:[-webkit-mask-repeat:no-repeat]
+
+  before:[mask-position:center]
+
+  before:[-webkit-mask-position:center]
+"
+                          >
+                            Deposit
+                          </button>
+                        </div>
+                      </div>
+                      <div className="w-full border-b border-[#d4d4d4] px-[15px] pb-[5px] text-[#404040]">
+                        <div className="relative flex">
+                          <div className="flex flex-col">
+                            <div
+                              className="  inline-block
+
+  pr-[50px]
+
+  min-[375px]:pr-[70px]
+
+  first:mt-0
+
+  last:my-[10px]"
+                            >
+                              <div className="whitespace-nowrap text-[11px] leading-[17px] text-[#404040]">
+                                Withdrawable
+                              </div>
+                              <div className="text-[15px] leading-5 font-bold text-[#404040]">
+                                $8.56
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              className="  inline-block
+
+  pr-[50px]
+
+  min-[375px]:pr-[70px]
+
+  first:mt-0
+
+  last:my-[10px]"
+                            >
+                              <div className="whitespace-nowrap text-[11px] leading-[17px] text-[#404040]">
+                                Bet Credits
+                              </div>
+                              <div className="text-[15px] leading-5 font-bold text-[#404040]">
+                                $0.00
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="relative flex h-[51px] overflow-hidden border-b-0 bg-[#f3f5f4]">
+                      <div className="relative flex h-full w-full bg-[#f3f5f4]">
+                        <div className="h-[3.188rem] w-full overflow-hidden">
+                          <div className="absolute hidden top-0 z-[2] flex h-[49px] w-10 cursor-pointer items-center justify-center bg-[#f3f5f4] " />
+                          <div className="relative mr-[15px] h-full overflow-x-auto overflow-y-hidden [scrollbar-width:none]">
+                            <div className="flex h-full items-center whitespace-nowrap">
+                              <div className="h-full whitespace-nowrap mr-[25px] ml-[15px]">
+                                <div className="relative inline-flex w-full h-full min-w-10 items-center justify-center align-middle text-[13px] leading-[33px] font-bold text-[#282828] cursor-pointer">
+                                  <div className="whitespace-nowrap  text-[#282828]">Account</div>
+                                </div>
+                              </div>
+                              <div className="h-full whitespace-nowrap mr-[25px] ">
+                                <div className="relative inline-flex w-full h-full min-w-10 items-center justify-center align-middle text-[13px] leading-[33px]  text-[#282828] cursor-pointer">
+                                  <div className="whitespace-nowrap  text-[#282828] hover:text-[#666] transition-all ease-in-out">
+                                    Alerts
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="h-full whitespace-nowrap mr-[25px] ">
+                                <div className="relative inline-flex w-full h-full min-w-10 items-center justify-center align-middle text-[13px] leading-[33px]  text-[#282828] cursor-pointer">
+                                  <div className="whitespace-nowrap  text-[#282828] hover:text-[#666] transition-all ease-in-out">
+                                    Preferences
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="absolute bottom-0 z-[1] h-0.5 w-[53.6172px] bg-[#58d7af] left-[15px] transition-all duration-300 ease-in-out" />
+                            </div>
+                          </div>
+                          <div className="absolute hidden top-0 right-0 z-[2] flex h-[49px] w-10 cursor-pointer items-center justify-center bg-[#f3f5f4]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
