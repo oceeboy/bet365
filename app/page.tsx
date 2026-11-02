@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ControlHeaderUi, HeaderComp } from '@/components/shared';
 import { OpendUi, SettledUi } from '@/components/comps';
 type TabType = 'Open' | 'Live' | 'Settled';
+
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabType>('Open');
   const [isTrue, setIsTrue] = useState<boolean>(true);

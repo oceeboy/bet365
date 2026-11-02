@@ -1,5 +1,6 @@
 'use client';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useId } from 'react';
+import { motion } from 'motion/react'; // or 'framer-motion', whichever you already use
 
 type TabType = 'Open' | 'Live' | 'Settled';
 
@@ -14,6 +15,8 @@ export function ControlHeaderUi({
   setActiveTab,
   tabs = ['Open', 'Live', 'Settled'],
 }: ControlHeaderUiProps) {
+  const pillId = useId();
+
   return (
     <div className="h-12.5 px-4 md:px-6 text-white flex items-center">
       <div className="w-full overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
@@ -23,14 +26,22 @@ export function ControlHeaderUi({
             return (
               <button
                 key={tab}
+                type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`relative h-6 px-2 text-xs  transition-all duration-200 cursor-pointer flex items-center justify-center whitespace-nowrap rounded-[16px] ${
+                className={`relative h-6 px-2 text-xs transition-colors duration-200 cursor-pointer flex items-center justify-center whitespace-nowrap rounded-[16px] ${
                   isActive
-                    ? 'bg-white text-black font-bold '
+                    ? 'text-black font-bold'
                     : 'bg-transparent text-white hover:bg-[#ffffff1a]'
                 }`}
               >
-                {tab}
+                {isActive && (
+                  <motion.span
+                    layoutId={pillId}
+                    className="absolute inset-0 rounded-[16px] bg-white"
+                    transition={{ type: 'tween', stiffness: 500, damping: 30, duration: 0.3 }}
+                  />
+                )}
+                <span className="relative z-10">{tab}</span>
               </button>
             );
           })}

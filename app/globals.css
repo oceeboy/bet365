@@ -60,6 +60,10 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /*
+  */
+  --text-16: 16px;
 }
 
 :root {
@@ -97,7 +101,7 @@
   --chart-5: oklch(0.269 0 0);
 
   --radius: 0.625rem;
-
+  --text-16: 16px;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -201,6 +205,16 @@
 
     100% {
       transform: scale(1);
+    }
+  }
+
+  @keyframes bl-Spinner {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 }

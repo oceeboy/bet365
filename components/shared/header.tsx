@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-export function HeaderComp() {
+export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   return (
     <header className="hgr-background sticky top-0 z-[100] min-w-[320px] h-12 lg:h-17.5 overflow-hidden transition-all duration-200">
       <div className="max-w-7xl mx-auto px-3 md:px-4 h-full flex items-center justify-between">
@@ -33,7 +33,7 @@ export function HeaderComp() {
 
           {/* Balance & Profile Section */}
           <div className="flex items-center ">
-            <button className="cursor-pointer focus:outline-none">
+            <button onClick={triggerModal} className="cursor-pointer focus:outline-none">
               <span className="px-2.5 text-xs font-heading font-bold bg-[#ffffff12] h-8 border group hover:border-[#00ffb6] flex items-center gap-1.5 transition-all duration-200 border-[rgba(0,255,182,0.4)] rounded-full">
                 <span className="whitespace-nowrap text-white">£176,000.00</span>
                 <svg
