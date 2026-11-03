@@ -286,6 +286,351 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <div className="flex flex-wrap">
+                        <div className="flex flex-wrap items-end justify-around w-full bg-[#F3F5F4] pt-5 pr-0 pb-2.5 pl-[5px]">
+                          <div className="bank-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="34"
+                                  height="31"
+                                  viewBox="0 0 34 31"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  aria-hidden="true"
+                                >
+                                  <g fill="none" fillRule="evenodd">
+                                    {/* animated top band */}
+                                    <path
+                                      className="bank-inside"
+                                      d="M27.5.518v5.982h-27v-2.5c.506-.53.9-.719 1.418-.904 1.145-.409 2.863-.774 5.153-1.101 4.568-.653 11.378-1.144 20.429-1.477h0z"
+                                      stroke="#9C9C9C"
+                                      fill="#EEF0F0"
+                                    />
+                                    {/* body */}
+                                    <path
+                                      d="M.5 5.569c3.226.34 13.432.485 30.903.497h0l1.286.001h.811v24.433h-30.5c-.69 0-1.315-.28-1.768-.732a2.492 2.492 0 0 1-.732-1.768h0z"
+                                      stroke="#9C9C9C"
+                                      fill="#FDFFFF"
+                                    />
+                                    {/* clasp pocket */}
+                                    <path
+                                      d="M33.471 16.25v6.314h-7.814a3.147 3.147 0 0 1-2.232-.924 3.147 3.147 0 0 1-.925-2.233c0-.872.353-1.661.925-2.232a3.147 3.147 0 0 1 2.232-.925h7.814z"
+                                      stroke="#9C9C9C"
+                                      fill="#FDFFFF"
+                                    />
+                                    {/* clasp dot */}
+                                    <path
+                                      d="M25.329 19h8.642v1h-8.641a.5.5 0 0 1 0-1z"
+                                      fill="#9C9C9C"
+                                    />
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              Bank
+                            </span>
+                          </div>
+                          <div className=" message-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                                  width="36"
+                                  height="25"
+                                  viewBox="0 0 36 25"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  aria-hidden="true"
+                                >
+                                  <defs>
+                                    <path
+                                      d="m3.007.001 29.993.013a3.004 3.004 0 0 1 3 3v18.986a3 3 0 0 1-3 3h-29.961a3 3 0 0 1-3-2.995l-.034-18.998a3 3 0 0 1 3.002-3.007z"
+                                      id="messagingUseA"
+                                    />
+                                  </defs>
+                                  <g fill="none" fillRule="evenodd">
+                                    <mask id="messagingMaskB" fill="#fff">
+                                      <use xlinkHref="#messagingUseA" />
+                                    </mask>
+
+                                    {/* envelope outline */}
+                                    <path
+                                      stroke="#9C9C9C"
+                                      fill="#FDFFFF"
+                                      d="m3 .501 30 .013a2.501 2.501 0 0 1 2.5 2.501h0v18.985c0 .69-.28 1.315-.732 1.768a2.492 2.492 0 0 1-1.768.732h0-29.961c-.69 0-1.314-.28-1.766-.73a2.492 2.492 0 0 1-.734-1.766h0l-.034-18.998a2.492 2.492 0 0 1 .73-1.77 2.492 2.492 0 0 1 1.765-.734h0z"
+                                    />
+                                    <path
+                                      d="m0 2 15.882 15.186c1.06 1.085 3.177 1.085 4.236 0l15.882-15.186h-36z"
+                                      stroke="#EEF0F0"
+                                      strokeWidth="2"
+                                      fill="#FDFFFF"
+                                      mask="url(#messagingMaskB)"
+                                    />
+                                    <path
+                                      d="m0 2 18 17 18-17h-36z"
+                                      fill="#EEF0F0"
+                                      mask="url(#messagingMaskB)"
+                                    />
+
+                                    {/* static masked wrapper; only the inner flap animates */}
+                                    <g mask="url(#messagingMaskB)">
+                                      <path
+                                        className="message-flap"
+                                        d="m0 1 15.882 15.186c1.06 1.085 3.177 1.085 4.236 0l15.882-15.186"
+                                        stroke="#9C9C9C"
+                                        fill="#FDFFFF"
+                                      />
+                                    </g>
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="absolute top-[-5px] right-8 flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#58d7af] text-center text-[10px] leading-[17px] font-bold text-[#505050]">
+                              1
+                            </div>
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              Messages
+                            </span>
+                          </div>
+                          <div className="account-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="38"
+                                  height="36"
+                                  viewBox="0 0 38 36"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  aria-hidden="true"
+                                >
+                                  <g fill="none" fillRule="evenodd">
+                                    {/* body */}
+                                    <path
+                                      d="M16.5 13.5c4.43 0 8.444 1.481 11.348 3.885 2.867 2.372 4.652 5.647 4.652 9.27 0 1.503-.306 2.723-.883 3.708-.614 1.05-1.533 1.828-2.685 2.41-2.972 1.504-7.442 1.727-12.432 1.727-4.99 0-9.46-.223-12.432-1.727-1.152-.582-2.07-1.36-2.685-2.41-.577-.985-.883-2.205-.883-3.708 0-3.623 1.785-6.898 4.652-9.27 2.904-2.405 6.918-3.885 11.348-3.885z"
+                                      stroke="#9C9C9C"
+                                      fill="#FDFFFF"
+                                    />
+                                    {/* neck shadow */}
+                                    <ellipse fill="#EEF0F0" cx="16.5" cy="10" rx="5.5" ry="7" />
+                                    {/* head */}
+                                    <circle
+                                      stroke="#9C9C9C"
+                                      fill="#FDFFFF"
+                                      cx="16.5"
+                                      cy="7.5"
+                                      r="7"
+                                    />
+
+                                    {/* animated wheel: outer <g> rotates, inner <g> keeps its translate */}
+                                    <g className="account-wheel">
+                                      <g transform="translate(18 16)">
+                                        <path
+                                          d="m10.753-.555.39 2.149c.599.165 1.168.4 1.7.696h0l1.196-1.196 3.032 2.358-1.244 1.796c.3.529.54 1.096.71 1.693h1.691l.477 3.812-2.149.39a7.714 7.714 0 0 1-.696 1.7h0l1.196 1.196-2.358 3.032-1.796-1.244c-.529.3-1.096.54-1.693.71h0v1.691l-3.812.477-.39-2.149a7.714 7.714 0 0 1-1.7-.696h0l-1.196 1.196-3.032-2.358 1.244-1.796a7.716 7.716 0 0 1-.71-1.693h0-1.691l-.477-3.812 2.149-.39c.165-.599.4-1.168.696-1.7h0l-1.196-1.196 2.358-3.031 1.796 1.244c.529-.3 1.096-.54 1.693-.71h0v-1.693l3.812-.477z"
+                                          stroke="#979797"
+                                          fill="#FDFFFF"
+                                        />
+                                        <circle
+                                          stroke="#9C9C9C"
+                                          fill="#EEF0F0"
+                                          cx="9.075"
+                                          cy="9.075"
+                                          r="2.75"
+                                        />
+                                      </g>
+                                    </g>
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              My Account
+                            </span>
+                          </div>
+                          <div className="shield-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="33"
+                                  height="38"
+                                  viewBox="0 0 33 38"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  aria-hidden="true"
+                                >
+                                  <g stroke="#9C9C9C" fill="none" fillRule="evenodd">
+                                    {/* shield */}
+                                    <path
+                                      d="m16.5 1-.161.092a106.33 106.33 0 0 1-7.559 3.915 94.713 94.713 0 0 1-7.554 3.159l-.198.072-.006.204c-.386 14.728 4.056 24.069 15.264 28.383l.465.175.12-.053c10.815-4.72 15.784-14.137 15.06-28.09l-.035-.62-.19-.07a97.35 97.35 0 0 1-7.538-3.167 106.83 106.83 0 0 1-6.666-3.433l-1.002-.567z"
+                                      fill="#FDFFFF"
+                                      fillRule="nonzero"
+                                    />
+                                    {/* keyhole */}
+                                    <path
+                                      d="M16.234 14.324c1.489 0 2.696 1.233 2.696 2.753a2.754 2.754 0 0 1-1.684 2.552l1.957 5.59a.397.397 0 0 1-.234.504.38.38 0 0 1-.13.023h-5.146a.39.39 0 0 1-.367-.518l1.814-5.635a2.756 2.756 0 0 1-1.601-2.516c0-1.52 1.207-2.753 2.695-2.753z"
+                                      fill="#EEF0F0"
+                                    />
+                                    {/* animated dashes */}
+                                    <g strokeLinecap="square">
+                                      <path
+                                        className="shield-dash-right"
+                                        d="M16.75 5s3.016 1.721 5.027 2.734c1.34.674 3.175 1.515 5.503 2.522"
+                                      />
+                                      <path
+                                        className="shield-dash-left"
+                                        d="M5.75 10.256s3.684-1.675 5.394-2.522c1.71-.847 5.106-2.734 5.106-2.734"
+                                      />
+                                    </g>
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              Gambling Controls
+                            </span>
+                          </div>
+                          <div className="activity-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="37"
+                                  height="26"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  viewBox="0 0 37 26"
+                                  aria-hidden="true"
+                                >
+                                  <g fill="none" fillRule="evenodd">
+                                    {/* card */}
+                                    <rect
+                                      width="36"
+                                      height="25"
+                                      x=".5"
+                                      y=".5"
+                                      fill="#FDFFFF"
+                                      stroke="#9C9C9C"
+                                      rx="3"
+                                    />
+                                    {/* header band */}
+                                    <path
+                                      fill="#EEF0F0"
+                                      d="M3 1h31.01a2 2 0 0 1 2 2v1.58h-35.01v-1.58a2 2 0 0 1 2-2z"
+                                      opacity=".75"
+                                    />
+                                    {/* chart points */}
+                                    <g fill="#9C9C9C">
+                                      <path d="M8.003 17.733c0 .567-.448 1.027-1.001 1.027-.554 0-1.002-.46-1.002-1.027s.448-1.027 1.002-1.027c.553 0 1.001.46 1.001 1.027" />
+                                      <path d="M13.726 11.866c0 .567-.448 1.026-1.001 1.026-.553 0-1.002-.46-1.002-1.026 0-.568.449-1.027 1.002-1.027.553 0 1.001.46 1.001 1.027" />
+                                      <path d="M20.126 18.426c0 .567-.448 1.027-1.002 1.027-.553 0-1.001-.46-1.001-1.027s.448-1.027 1.001-1.027c.554 0 1.002.46 1.002 1.027" />
+                                      <path d="M29.556 8.79c0 .568-.448 1.027-1.001 1.027-.553 0-1.002-.46-1.002-1.027s.449-1.026 1.002-1.026c.553 0 1.001.46 1.001 1.026" />
+                                    </g>
+                                    {/* animated trend line */}
+                                    <path
+                                      className="activity-line"
+                                      stroke="#9C9C9C"
+                                      strokeWidth=".5"
+                                      d="m7.002 17.733 5.723-5.867 6.4 6.56 9.43-9.636"
+                                    />
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              My Activity
+                            </span>
+                          </div>
+                          <div className="history-button relative flex flex-[1_0_31%] flex-col items-center min-w-[100px] max-w-[31%] min-h-[92px] mr-[5px] pt-0 pb-5 cursor-pointer text-center text-[11px] leading-[17px] font-bold text-[#505050]">
+                            <div className="flex h-[39px] items-end justify-center mb-[5px]">
+                              <div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="33"
+                                  height="33"
+                                  className="flex h-[39px] items-end justify-center mb-[5px]"
+                                  viewBox="0 0 32 32"
+                                  aria-hidden="true"
+                                >
+                                  <g fill="none" fillRule="evenodd">
+                                    <rect
+                                      width="33"
+                                      height="33"
+                                      fill="#FDFFFF"
+                                      fillRule="nonzero"
+                                      rx="16"
+                                    />
+                                    <circle
+                                      cx="16"
+                                      cy="16"
+                                      r="14.5"
+                                      stroke="#EEF0F0"
+                                      strokeWidth="3"
+                                    />
+                                    <circle cx="16" cy="16" r="15.5" stroke="#9C9C9C" />
+
+                                    {/* animated minute hand */}
+                                    <g className="history-minute">
+                                      <line x1="16" x2="16" y1="16.5" y2="7" stroke="#C3C3C3" />
+                                    </g>
+
+                                    {/* static hour hand */}
+                                    <line
+                                      x1="24.007"
+                                      x2="16"
+                                      y1="16.469"
+                                      y2="16.469"
+                                      stroke="#C3C3C3"
+                                    />
+
+                                    {/* hour ticks */}
+                                    <g fill="#9C9C9C" fillRule="nonzero" transform="translate(2 2)">
+                                      <circle cx="14" cy="26.5" r="1" />
+                                      <circle cx="14" cy="1.5" r="1" />
+                                      <circle cx="1.5" cy="14.5" r="1" />
+                                      <circle cx="26.5" cy="14.5" r="1" />
+                                    </g>
+
+                                    {/* center pin */}
+                                    <circle
+                                      cx="16"
+                                      cy="16.5"
+                                      r="1"
+                                      fill="#9E9E9E"
+                                      fillRule="nonzero"
+                                      stroke="#9E9E9E"
+                                    />
+                                  </g>
+                                </svg>
+                              </div>
+                            </div>
+                            <span className="w-full cursor-pointer break-words text-center text-[11px] font-bold leading-[17px] text-[#505050]">
+                              History
+                            </span>
+                          </div>
+                        </div>
+                        <div className="w-full border-y border-[#d4d4d4]">
+                          <div className="flex hover:bg-white flex-none flex-row items-center w-full pt-[5px] max-w-none min-h-0 overflow-hidden mr-0 px-[15px] pb-0 text-left text-ellipsis whitespace-nowrap text-[15px] font-normal leading-[45px] text-[#404040]">
+                            <span className="box-border flex flex-none flex-row items-center w-full break-words text-[15px] font-normal leading-[45px] text-[#404040]">
+                              Responsible Gambling
+                            </span>
+                          </div>
+                          <div className="flex hover:bg-white flex-none flex-row items-center w-full pb-[5px] max-w-none min-h-0 overflow-hidden mr-0 px-[15px] pb-0 text-left text-ellipsis whitespace-nowrap text-[15px] font-normal leading-[45px] text-[#404040]">
+                            <span className="box-border flex flex-none flex-row items-center w-full break-words text-[15px] font-normal leading-[45px] text-[#404040]">
+                              Help
+                            </span>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="flex h-[55px] hover:bg-white flex-none flex-row items-center w-full max-w-none overflow-hidden mr-0  px-[15px] text-left text-ellipsis whitespace-nowrap text-[15px] font-normal leading-[45px] text-[#404040] pt-[5px] pb-[5px]">
+                            <span className="box-border flex flex-none flex-row items-center w-full break-words text-[15px] font-normal leading-[45px] text-[#404040]">
+                              Log Out
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

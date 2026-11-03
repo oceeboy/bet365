@@ -229,4 +229,196 @@
       transform: rotate(360deg);
     }
   }
+
+  @keyframes mmr-d88a11 {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    33%,
+    66% {
+      transform: rotate(-30deg);
+    }
+  }
+
+  @keyframes accountWheel {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+
+    33%,
+    66% {
+      transform: rotate(-30deg);
+    }
+  }
+
+  .account-wheel {
+    transform-box: fill-box;
+
+    transform-origin: center center;
+  }
+
+  .account-button:hover .account-wheel {
+    animation: accountWheel 0.8s ease 0s 1 normal forwards;
+  }
+  @media (hover: hover) {
+    .account-button:hover .account-wheel {
+      animation: accountWheel 0.8s ease 0s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .account-button:hover .account-wheel {
+      animation: none;
+    }
+  }
+  @keyframes messageFlap {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    33%,
+    66% {
+      transform: scaleY(0.8);
+    }
+  }
+
+  .message-flap {
+    /* no transform-box: fill-box here, so the origin is the top-center of the SVG viewBox */
+    transform-origin: center top;
+  }
+
+  @media (hover: hover) {
+    .message-button:hover .message-flap {
+      animation: messageFlap 1s ease 0s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .message-button:hover .message-flap {
+      animation: none;
+    }
+  }
+
+  @keyframes bankSquash {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    40%,
+    55% {
+      transform: scaleX(0.8);
+    }
+  }
+
+  .bank-inside {
+    transform: scale(1);
+    transform-origin: left center;
+  }
+
+  @media (hover: hover) {
+    .bank-button:hover .bank-inside {
+      animation: bankSquash 1s ease 0s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bank-button:hover .bank-inside {
+      animation: none;
+    }
+  }
+
+  @keyframes dashDrawLeft {
+    0% {
+      stroke-dashoffset: 12px;
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes dashDrawRight {
+    0% {
+      stroke-dashoffset: 12px;
+    }
+    100% {
+      stroke-dashoffset: 0px;
+    }
+  }
+
+  @media (hover: hover) {
+    .shield-button:hover .shield-dash-left {
+      stroke-dasharray: 12px;
+      stroke-dashoffset: 0px;
+      animation: dashDrawLeft 0.3s ease 0s 1 normal forwards;
+    }
+
+    .shield-button:hover .shield-dash-right {
+      stroke-dasharray: 12px;
+      stroke-dashoffset: 12px; /* hidden during the 200ms delay */
+      animation: dashDrawRight 0.3s ease-out 0.2s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shield-button:hover .shield-dash-left,
+    .shield-button:hover .shield-dash-right {
+      stroke-dasharray: none;
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+  }
+
+  @keyframes activityDraw {
+    0% {
+      stroke-dashoffset: 32px;
+    }
+    100% {
+      stroke-dashoffset: 0px;
+    }
+  }
+
+  @media (hover: hover) {
+    .activity-button:hover .activity-line {
+      stroke-dasharray: 32px;
+      stroke-dashoffset: 0px;
+      animation: activityDraw 1s ease 0s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .activity-button:hover .activity-line {
+      stroke-dasharray: none;
+      animation: none;
+    }
+  }
+
+  @keyframes historyMinute {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    55%,
+    60% {
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (hover: hover) {
+    .history-button:hover .history-minute {
+      transform-box: fill-box;
+      transform-origin: center bottom;
+      animation: historyMinute 2s ease 0s 1 normal forwards;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .history-button:hover .history-minute {
+      animation: none;
+    }
+  }
 }
