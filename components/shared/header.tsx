@@ -799,8 +799,19 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                       )}
                       {activeTab === 'preferences' && (
                         <div className="bg-[#F3F5F4] min-h-[200px]">
-                          <div className="">
-                            <div className="relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]">
+                          <div
+                            className={cn(
+                              '',
+                              showLangauageOptions ? 'border-b border-[#E4E4E4' : '',
+                            )}
+                          >
+                            <div
+                              onClick={() => setShowLanguageOptions(!showLangauageOptions)}
+                              className={cn(
+                                'relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]',
+                                showLangauageOptions ? 'bg-white' : '',
+                              )}
+                            >
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Language
                               </div>
@@ -810,7 +821,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
                             </div>
 
-                            <div className="max-h-[495px] overscroll-auto overflow-y-scroll">
+                            <div
+                              className={cn(
+                                'max-h-[495px] overscroll-auto overflow-y-scroll',
+                                showLangauageOptions ? '' : 'hidden',
+                              )}
+                            >
                               <div className="relative inline-flex h-[45px] w-1/2 cursor-pointer flex-col justify-center bg-white px-[15px] text-[13px] leading-[20px] font-bold text-[#282828]">
                                 English
                                 <div className="absolute top-0 left-0 h-[45px] w-[3px] bg-[#58d7af] box-border"></div>
@@ -874,8 +890,19 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               </div>
                             </div>
                           </div>
-                          <div className="">
-                            <div className="relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]">
+                          <div
+                            className={cn(
+                              '',
+                              showTimezoneOptions ? 'border-b border-[#E4E4E4' : '',
+                            )}
+                          >
+                            <div
+                              onClick={() => setShowTimezoneOptions(!showTimezoneOptions)}
+                              className={cn(
+                                'relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]',
+                                showTimezoneOptions ? 'bg-white' : '',
+                              )}
+                            >
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Time Zone
                               </div>
@@ -884,7 +911,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               </div>
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
                             </div>
-                            <div className="max-h-[495px] overscroll-auto overflow-y-scroll">
+                            <div
+                              className={cn(
+                                'max-h-[495px] overscroll-auto overflow-y-scroll',
+                                showTimezoneOptions ? '' : 'hidden',
+                              )}
+                            >
                               <div className="relative hover:bg-white transition-all duration-500 ease-in-out inline-flex h-[45px] w-1/2 cursor-pointer flex-col justify-center px-[15px] text-[13px] leading-[20px] text-[#282828] box-border">
                                 UK
                               </div>
@@ -996,8 +1028,19 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               </div>
                             </div>
                           </div>
-                          <div className=" border-b border-[#E4E4E4]">
-                            <div className="relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]">
+                          <div
+                            className={cn(
+                              '',
+                              showInactivityOptions ? 'border-b border-[#E4E4E4' : '',
+                            )}
+                          >
+                            <div
+                              onClick={() => setShowInactivityOptions(!showInactivityOptions)}
+                              className={cn(
+                                'relative flex h-[60px] cursor-pointer flex-col hover:bg-white  transition-all ease-in-out duration-500 justify-center border-b border-[#E4E4E4] pl-[15px]',
+                                showInactivityOptions ? 'bg-white' : '',
+                              )}
+                            >
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Max Inactivity Time
                               </div>
@@ -1006,7 +1049,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               </div>
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
                             </div>
-                            <div className="max-h-[495px] overscroll-auto overflow-y-scroll">
+                            <div
+                              className={cn(
+                                'max-h-[495px] overscroll-auto overflow-y-scroll',
+                                showInactivityOptions ? '' : 'hidden',
+                              )}
+                            >
                               <div className="relative inline-flex h-[45px] w-full cursor-pointer flex-col justify-center px-[15px] text-[13px] hover:bg-white duration-500 ease-in-out leading-[20px] text-[#282828]">
                                 20 Minutes
                               </div>
