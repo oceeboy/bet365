@@ -19,6 +19,11 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   const [showLangauageOptions, setShowLanguageOptions] = useState<boolean>(false);
   const [showTimezoneOptions, setShowTimezoneOptions] = useState<boolean>(false);
   const [showInactivityOptions, setShowInactivityOptions] = useState<boolean>(false);
+
+  //
+  const [showPasscodeOptions, setShowPasscodeOptions] = useState<boolean>(false);
+  const [showGamingLink, setShowGamingLink] = useState<boolean>(false);
+
   const underlineId = useId();
   const handleClick = () => {
     setIsAnimating(true);
@@ -1122,6 +1127,32 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                             </div>
                           </div>
                           <div
+                            onClick={() => setShowPasscodeOptions((prev) => !prev)}
+                            className="relative flex h-[59px] w-full items-center border-b border-[#e4e4e4] px-0 py-[10px] pl-[15px] text-[13px]"
+                          >
+                            <div className="inline-block w-full max-w-[calc(100%-78px)] text-left text-[13px] leading-[18px] text-[#282828]">
+                              Log in Using Passcode
+                            </div>
+
+                            <div className="absolute top-0 right-0 h-[45px] w-[53px] items-center flex justify-center">
+                              <div
+                                role="switch"
+                                aria-checked={showPasscodeOptions}
+                                className={cn(
+                                  'inline-flex relative mx-[10px] h-[20px] w-[33px] cursor-pointer rounded-[10px] transition-colors duration-200 ease-in-out',
+                                  showPasscodeOptions ? 'bg-[#58d7af]' : 'bg-[#9c9c9c]',
+                                )}
+                              >
+                                <div
+                                  className={cn(
+                                    'absolute left-[2px] top-[2px] h-4 w-4 rounded-full bg-white shadow-[2px_-2px_6px_0_rgba(0,0,0,0.15)] transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)]',
+                                    showPasscodeOptions ? 'translate-x-[13px]' : 'translate-x-0',
+                                  )}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
                             onClick={() => setShowBalance((prev) => !prev)}
                             className="relative flex h-[59px] w-full items-center border-b-0 px-0 py-[10px] pl-[15px] text-[13px]"
                           >
@@ -1142,6 +1173,32 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                   className={cn(
                                     'absolute left-[2px] top-[2px] h-4 w-4 rounded-full bg-white shadow-[2px_-2px_6px_0_rgba(0,0,0,0.15)] transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)]',
                                     showBalance ? 'translate-x-[13px]' : 'translate-x-0',
+                                  )}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            onClick={() => setShowGamingLink((prev) => !prev)}
+                            className="relative flex h-[59px] w-full items-center border-b-0 px-0 py-[10px] pl-[15px] text-[13px]"
+                          >
+                            <div className="inline-block w-full max-w-[calc(100%-78px)] text-left text-[13px] leading-[18px] text-[#282828]">
+                              Show Gaming Quick Link
+                            </div>
+
+                            <div className="absolute top-0 right-0 h-[45px] w-[53px] items-center flex justify-center">
+                              <div
+                                role="switch"
+                                aria-checked={showGamingLink}
+                                className={cn(
+                                  'inline-flex relative mx-[10px] h-[20px] w-[33px] cursor-pointer rounded-[10px] transition-colors duration-200 ease-in-out',
+                                  showGamingLink ? 'bg-[#58d7af]' : 'bg-[#9c9c9c]',
+                                )}
+                              >
+                                <div
+                                  className={cn(
+                                    'absolute left-[2px] top-[2px] h-4 w-4 rounded-full bg-white shadow-[2px_-2px_6px_0_rgba(0,0,0,0.15)] transition-transform duration-200 ease-[cubic-bezier(0.32,0.72,0,1)]',
+                                    showGamingLink ? 'translate-x-[13px]' : 'translate-x-0',
                                   )}
                                 />
                               </div>
