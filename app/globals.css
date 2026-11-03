@@ -63,6 +63,7 @@
 
   /*
   */
+  --icon-chevron-down: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7'%3E%3Cpath fill='%23636363' fill-rule='evenodd' d='M12 .784 11.243 0 6 5.431.757 0 0 .784l5.243 5.432L6 7l.757-.784z'/%3E%3C/svg%3E");
   --text-16: 16px;
   --icon-depositArrows: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 13'%3E%3Cpath fill='%23000' d='M4.586 7.802 6 9.212l1.414-1.41-.003-.003 3.271-3.278-1.414-1.41L7 5.383V0H5l.002 5.385-2.27-2.274-1.414 1.41 3.27 3.278-.002.003ZM12 13v-1.995H0V13h12Z'/%3E%3C/svg%3E");
 }
@@ -112,7 +113,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
+  --icon-chevron-down: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7'%3E%3Cpath fill='%23636363' fill-rule='evenodd' d='M12 .784 11.243 0 6 5.431.757 0 0 .784l5.243 5.432L6 7l.757-.784z'/%3E%3C/svg%3E");
   --icon-wonBadgeEndCap: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 29'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' x2='100%25' y1='50%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='color(display-p3 0.353 0.933 0.588)'/%3E%3Cstop offset='100%25' stop-color='color(display-p3 0.396 0.937 0.780)'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' fill-rule='evenodd' d='M.11 3H-9a1.5 1.5 0 0 1 0-3H94.805a1.5 1.5 0 0 1 0 3h-8.756c-5.665 0-10.256 4.592-10.256 10.256V16c0 7.18-5.82 13-13 13H23.719c-7.18 0-13-5.82-13-13v-2.39C10.72 7.75 5.97 3 .11 3'/%3E%3C/svg%3E");
 }
 
@@ -158,6 +159,9 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --icon-depositArrows: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 13'%3E%3Cpath fill='%23000' d='M4.586 7.802 6 9.212l1.414-1.41-.003-.003 3.271-3.278-1.414-1.41L7 5.383V0H5l.002 5.385-2.27-2.274-1.414 1.41 3.27 3.278-.002.003ZM12 13v-1.995H0V13h12Z'/%3E%3C/svg%3E");
+
+  --icon-chevron-down: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7'%3E%3Cpath fill='%23636363' fill-rule='evenodd' d='M12 .784 11.243 0 6 5.431.757 0 0 .784l5.243 5.432L6 7l.757-.784z'/%3E%3C/svg%3E");
 }
 
 @layer base {
