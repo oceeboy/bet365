@@ -24,6 +24,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   const [showPasscodeOptions, setShowPasscodeOptions] = useState<boolean>(false);
   const [showGamingLink, setShowGamingLink] = useState<boolean>(false);
 
+  const [isDeviceMobile, setIsDeviceMobile] = useState<boolean>(true);
   const underlineId = useId();
   const handleClick = () => {
     setIsAnimating(true);
@@ -302,7 +303,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                     >
                                       Account
                                     </div>
-                                    {activeTab === 'account' && (
+                                    {activeTab === 'account' && !isDeviceMobile && (
                                       <motion.div
                                         layoutId={underlineId}
                                         className="absolute bottom-0 left-0 right-0 z-[1] h-0.5 bg-[#58d7af]"
@@ -313,31 +314,38 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                 </div>
 
                                 {/* Alerts */}
-                                <div className="h-full whitespace-nowrap mr-[25px]">
-                                  <div
-                                    onClick={() => setActiveTab('alerts')}
-                                    className={cn(
-                                      'relative inline-flex w-full h-full min-w-10 items-center justify-center align-middle text-[13px] leading-[33px] text-[#282828] cursor-pointer',
-                                      activeTab === 'alerts' && 'font-bold',
-                                    )}
-                                  >
+
+                                {!isDeviceMobile && (
+                                  <div className="h-full whitespace-nowrap mr-[25px]">
                                     <div
+                                      onClick={() => setActiveTab('alerts')}
                                       className={cn(
-                                        'whitespace-nowrap text-[#282828] transition-colors ease-in-out',
-                                        activeTab !== 'alerts' && 'hover:text-[#666]',
+                                        'relative inline-flex w-full h-full min-w-10 items-center justify-center align-middle text-[13px] leading-[33px] text-[#282828] cursor-pointer',
+                                        activeTab === 'alerts' && 'font-bold',
                                       )}
                                     >
-                                      Alerts
+                                      <div
+                                        className={cn(
+                                          'whitespace-nowrap text-[#282828] transition-colors ease-in-out',
+                                          activeTab !== 'alerts' && 'hover:text-[#666]',
+                                        )}
+                                      >
+                                        Alerts
+                                      </div>
+                                      {activeTab === 'alerts' && !isDeviceMobile && (
+                                        <motion.div
+                                          layoutId={underlineId}
+                                          className="absolute bottom-0 left-0 right-0 z-[1] h-0.5 bg-[#58d7af]"
+                                          transition={{
+                                            type: 'spring',
+                                            stiffness: 500,
+                                            damping: 35,
+                                          }}
+                                        />
+                                      )}
                                     </div>
-                                    {activeTab === 'alerts' && (
-                                      <motion.div
-                                        layoutId={underlineId}
-                                        className="absolute bottom-0 left-0 right-0 z-[1] h-0.5 bg-[#58d7af]"
-                                        transition={{ type: 'spring', stiffness: 500, damping: 35 }}
-                                      />
-                                    )}
                                   </div>
-                                </div>
+                                )}
 
                                 {/* Preferences */}
                                 <div className="h-full whitespace-nowrap mr-[25px]">
@@ -356,7 +364,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                     >
                                       Preferences
                                     </div>
-                                    {activeTab === 'preferences' && (
+                                    {activeTab === 'preferences' && !isDeviceMobile && (
                                       <motion.div
                                         layoutId={underlineId}
                                         className="absolute bottom-0 left-0 right-0 z-[1] h-0.5 bg-[#58d7af]"
@@ -723,7 +731,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                           </div>
                         </div>
                       )}
-                      {activeTab === 'alerts' && (
+                      {activeTab === 'alerts' && !isDeviceMobile && (
                         <div>
                           <div>
                             <div>
