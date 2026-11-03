@@ -121,7 +121,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
               >
                 <div
                   className={cn(
-                    `fixed top-12 right-0 z-[99] inline-block
+                    `fixed top-12 right-0 z-[9991] inline-block
   w-full max-w-[375px] max-h-screen
   overflow-x-hidden overflow-y-auto
   overscroll-none
