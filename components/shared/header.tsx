@@ -170,6 +170,8 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   before:[-webkit-mask-position:center]
 
   before:scale-y-[-1]
+  hover:bg-white
+  hover:text-[#126e51]
                           "
                             >
                               Withdraw
@@ -187,6 +189,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   border
   border-[#58d7af]
   bg-[rgba(88,215,175,0.35)]
+  hover:bg-[rgba(88,215,175,0.6)]
   px-3
   py-1.5
   text-[11px]
@@ -815,7 +818,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Language
                               </div>
-                              <div className="box-border inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]">
+                              <div
+                                className={cn(
+                                  'box-border inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]',
+                                  showLangauageOptions ? 'font-bold' : '',
+                                )}
+                              >
                                 English
                               </div>
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
@@ -906,7 +914,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Time Zone
                               </div>
-                              <div className="box-border inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]">
+                              <div
+                                className={cn(
+                                  'box-border inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]',
+                                  showTimezoneOptions ? 'font-bold' : '',
+                                )}
+                              >
                                 GMT-4
                               </div>
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
@@ -1044,7 +1057,12 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                               <div className="box-border pt-[10px] text-[11px] leading-[17px] text-[#404040]">
                                 Max Inactivity Time
                               </div>
-                              <div className="box-border font-bold inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]">
+                              <div
+                                className={cn(
+                                  'box-border  inline-block cursor-pointer py-[4px] pb-[10px] text-[15px] leading-[18px] text-[#282828]',
+                                  showInactivityOptions ? 'font-bold' : '',
+                                )}
+                              >
                                 12 Hours
                               </div>
                               <div className="absolute top-0 right-0 block h-full w-[10px] ml-[10px] mr-[25px] bg-[length:10px_6px] bg-[position:50%] bg-no-repeat [background-image:var(--icon-chevron-down)]"></div>
