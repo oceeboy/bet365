@@ -61,7 +61,10 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
             </button>
 
             <div className="relative">
-              <button className="w-12 h-12 flex items-center transition-all duration-200 relative justify-center cursor-pointer focus:outline-none ">
+              <button
+                type="button"
+                className="w-12 h-12 flex items-center transition-all duration-200 relative justify-center cursor-pointer focus:outline-none "
+              >
                 <div className=" border rounded-full border-[#28ffbb] transition-all duration-200 ease-in-out opacity-60 hover:opacity-100 absolute size-8" />
                 <SumoIcon string="" />
               </button>
@@ -254,7 +257,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                       </div>
                     </div>
                     <div className="relative flex h-[51px] overflow-hidden border-b-0 bg-[#f3f5f4]">
-                      <div className="relative flex h-full w-full bg-[#f3f5f4]">
+                      <div className="relative flex h-full w-full bg-[#f3f5f4] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#e4e4e4] after:content-['']">
                         <div className="h-[3.188rem] w-full overflow-hidden">
                           <div className="absolute hidden top-0 z-[2] flex h-[49px] w-10 cursor-pointer items-center justify-center bg-[#f3f5f4] " />
                           <div className="relative mr-[15px] h-full overflow-x-auto overflow-y-hidden [scrollbar-width:none]">
@@ -286,6 +289,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                         </div>
                       </div>
                     </div>
+
                     <div>
                       <div className="flex flex-wrap">
                         <div className="flex flex-wrap items-end justify-around w-full bg-[#F3F5F4] pt-5 pr-0 pb-2.5 pl-[5px]">
