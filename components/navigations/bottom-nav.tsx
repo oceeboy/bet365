@@ -332,7 +332,7 @@ export function BottomNavigation() {
   const pathname = usePathname();
 
   return (
-    <footer className="fixed inset-x-0 bottom-0 z-[90] md:hidden box-border w-full bg-[#282828] pb-[env(safe-area-inset-bottom,0px)] transition-all duration-200 ease-in">
+    <footer className="fixed inset-x-0 bottom-0 z-[999] md:hidden box-border w-full bg-[#282828] pb-[env(safe-area-inset-bottom,0px)] transition-all duration-200 ease-in">
       <div className="grid-auto-cols-[minmax(0,1fr)] grid-flow-col w-full grid justify-self-center max-w-[450px]">
         {bottom_navigation_items.map((item) => {
           const isActive = pathname === item.href;

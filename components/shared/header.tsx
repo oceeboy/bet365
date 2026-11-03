@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+'use client';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { useId, useState } from 'react';
@@ -32,6 +33,10 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
     setTimeout(() => {
       setIsAnimating(false);
     }, 1000);
+
+    function toggleProfileVisibility() {
+      setIsVisible((prev) => !prev);
+    }
   };
   return (
     <header className="hgr-background sticky top-0 z-[100] min-w-[320px] h-12 lg:h-17.5 overflow-hidden transition-all duration-200">
@@ -65,9 +70,22 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
 
           {/* Balance & Profile Section */}
           <div className="flex items-center ">
-            <button onClick={triggerModal} className="cursor-pointer focus:outline-none">
-              <span className="px-2.5 text-xs font-heading font-bold bg-[#ffffff12] h-8 border group hover:border-[#00ffb6] flex items-center gap-1.5 transition-all duration-200 border-[rgba(0,255,182,0.4)] rounded-full">
-                <span className="whitespace-nowrap text-white">£176,000.00</span>
+            <button
+              onClick={() => {
+                triggerModal();
+                setIsVisible(false);
+              }}
+              className="cursor-pointer focus:outline-none"
+            >
+              <span
+                className={cn(
+                  'px-2.5 text-xs font-heading font-bold bg-[#ffffff12] h-8 border group hover:border-[#00ffb6] flex items-center gap-1.5 transition-all duration-200 border-[rgba(0,255,182,0.4)] rounded-full',
+                  isVisible && 'border-[#00ffb6]',
+                )}
+              >
+                <span className={cn('whitespace-nowrap text-white', isVisible && 'text-[#00ffb6]')}>
+                  £176,000.00
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 14 14"
@@ -83,14 +101,27 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
             <div className="relative">
               <button
                 type="button"
+                onClick={() => setIsVisible((prev) => !prev)}
                 className="w-12 h-12 flex items-center transition-all duration-200 relative justify-center cursor-pointer focus:outline-none "
               >
-                <div className=" border rounded-full border-[#28ffbb] transition-all duration-200 ease-in-out opacity-60 hover:opacity-100 absolute size-8" />
+                <div
+                  className={cn(
+                    ' border rounded-full border-[#28ffbb] transition-all duration-200 ease-in-out opacity-60 hover:opacity-100 absolute size-8',
+                    isVisible && ' border-[#28ffbb] opacity-100',
+                  )}
+                />
                 <SumoIcon string="" />
               </button>
-              <div className="fixed top-12 right-0 bottom-0 left-0 z-[98] bg-black/60">
+              <div
+                className={cn(
+                  'fixed top-12 right-0 bottom-0 left-0 z-[98] bg-black/60',
+                  !isVisible && 'pointer-events-none bg-transparent',
+                )}
+                onClick={() => setIsVisible(false)}
+              >
                 <div
-                  className="fixed top-12 right-0 z-[99] inline-block
+                  className={cn(
+                    `fixed top-12 right-0 z-[99] inline-block
   w-full max-w-[375px] max-h-screen
   overflow-x-hidden overflow-y-auto
   overscroll-none
@@ -99,7 +130,9 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
   text-left
   shadow-[0_2px_10px_0_rgba(0,0,0,0.5)]
   transform-gpu
-  transition-transform duration-150"
+  transition-transform duration-150`,
+                    !isVisible && 'hidden',
+                  )}
                 >
                   <div>
                     <div className="overflow-hidden overflow-y-auto max-h-[calc(100vh-208px)]">
@@ -1240,7 +1273,7 @@ export function SumoIcon({ string }: { string: string }) {
       />
 
       <path
-        className="hrm-9a"
+        className="transition-all duration-250 ease-in-out"
         fill={string}
         fillOpacity=".4"
         d="M16 32v-1C7.716 31 1 24.284 1 16h-2c0 9.389 7.611 17 17 17zm16-16h-1c0 8.284-6.716 15-15 15v2c9.389 0 17-7.611 17-17zM16 0v1c8.284 0 15 6.716 15 15h2c0-9.389-7.611-17-17-17zm0 0v-1C6.611-1-1 6.611-1 16h2C1 7.716 7.716 1 16 1z"
