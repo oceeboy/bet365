@@ -69,7 +69,7 @@ export function MainRootLayout({ children }: { children: ReactNode }) {
             'pb-[env(safe-area-inset-bottom)]',
             'transition-[translate,visibility] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]',
             isVisible ? 'translate-y-0 visible' : 'translate-y-full invisible',
-            'min-[620px]:h-[min(635px,100dvh)]',
+            'min-[620px]:h-[min(635px,100dvh)] [@media(height>=620px)]:h-[min(635px,100dvh)] [@media(height>=620px)]:min-h-[min(635px,100dvh)] [@media(height>=620px)]:max-h-[min(635px,100dvh)]',
           )}
         >
           {/* Modal content goes here */}
