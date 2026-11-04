@@ -101,13 +101,11 @@ const bottom_navigation_items: BottomNavigationItems[] = [
         className="size-7"
       >
         <defs>
-          {/* Radial Gradient matching original #FFDF1B to #28FFBB */}
           <radialGradient id={gradientId} cx="0%" cy="0%" fx="0%" fy="0%" r="141.421%">
             <stop stopColor="#FFDF1B" offset="0%" />
             <stop stopColor="#28FFBB" offset="100%" />
           </radialGradient>
 
-          {/* Shadow filter matching precise feColorMatrix RGBA parameters */}
           <filter
             id={filterId}
             x="-13.3%"
@@ -124,7 +122,6 @@ const bottom_navigation_items: BottomNavigationItems[] = [
             />
           </filter>
 
-          {/* Shared Globe Geometry Path */}
           <path
             id={pathId}
             d="M10.5-.75c6.213 0 11.25 5.037 11.25 11.25S16.713 21.75 10.5 21.75-.75 16.713-.75 10.5 4.287-.75 10.5-.75Zm0 1.5a9.713 9.713 0 0 0-6.45 2.439 11.201 11.201 0 0 1 2.7 7.311 11.21 11.21 0 0 1-2.7 7.312 9.716 9.716 0 0 0 6.45 2.438 9.713 9.713 0 0 0 6.45-2.439 11.201 11.201 0 0 1-2.7-7.311c0-2.725.974-5.297 2.7-7.312A9.716 9.716 0 0 0 10.5.75ZM18 4.27l-.039.046A9.709 9.709 0 0 0 15.75 10.5c0 2.315.81 4.5 2.25 6.23a9.71 9.71 0 0 0 2.25-6.23A9.71 9.71 0 0 0 18 4.27Zm-15 0-.153.189A9.708 9.708 0 0 0 .75 10.5 9.71 9.71 0 0 0 3 16.73a9.702 9.702 0 0 0 2.25-6.23C5.25 8.185 4.44 6 3 4.27Z"
@@ -132,16 +129,13 @@ const bottom_navigation_items: BottomNavigationItems[] = [
         </defs>
 
         <g transform="translate(4.5 4.5)" fillRule="nonzero" fill="none">
-          {/* Layer 1: Colored drop shadow */}
           <use
             fill="#000"
             filter={`url(#${filterId})`}
             href={`#${pathId}`}
             xlinkHref={`#${pathId}`}
           />
-          {/* Layer 2: White background fallback layer */}
           <use fill="#FFF" href={`#${pathId}`} xlinkHref={`#${pathId}`} />
-          {/* Layer 3: Top radial gradient layer */}
           <use fill={`url(#${gradientId})`} href={`#${pathId}`} xlinkHref={`#${pathId}`} />
         </g>
       </svg>
@@ -266,9 +260,7 @@ const bottom_navigation_items: BottomNavigationItems[] = [
 
         <g transform="translate(5 5)" fillRule="nonzero">
           <use href="#check-shape" fill="#48DBAC" opacity=".5" filter="url(#check-shadow)" />
-
           <use href="#check-shape" fill="#FFF" />
-
           <use href="#check-shape" fill="url(#check-gradient)" />
         </g>
       </svg>
@@ -335,36 +327,39 @@ export function BottomNavigation() {
   const pathname = usePathname();
 
   const bet_data_check = bet_data.filter((b) => b.status === 'pending').length;
-  const isBetActive = bet_data_check > 0; // update later to use totat
+  const isBetActive = bet_data_check > 0;
+
   return (
     <footer className="fixed inset-x-0 bottom-0 z-[999] md:hidden box-border w-full bg-[#282828] pb-[env(safe-area-inset-bottom,0px)] transition-all duration-200 ease-in">
-      <div className="grid-auto-cols-[minmax(0,1fr)] grid-flow-col w-full grid justify-self-center max-w-[450px]">
+      <div className="grid grid-flow-col auto-cols-fr w-full justify-self-center max-w-[450px]">
         {bottom_navigation_items.map((item) => {
           const isActive = pathname === item.href;
+          const isMyBets = item.label === 'My Bets';
 
           return (
             <div
               key={item.label}
               onClick={() => router.push(item.href)}
-              className={`self-stretch items-center bg-transparent bg-[position:top_7px_center] bg-no-repeat bg-[length:28px] border-0 text-white flex flex-col text-[10px] font-bold h-[60px] justify-end min-w-[30px] outline-none pb-[10px] text-center transition-colors duration-[250ms] cursor-pointer 
-            `}
+              className="relative self-stretch items-center bg-transparent bg-[position:top_7px_center] bg-no-repeat bg-[length:28px] border-0 text-white flex flex-col text-[10px] font-bold h-[60px] justify-end min-w-[30px] outline-none pb-[10px] text-center transition-colors duration-[250ms] cursor-pointer"
             >
-              {isActive ? item.activeSvg : item.inactiveSvg}
+              {/* Icon Container with relative positioning for badge placement */}
+              <div className="relative flex items-center justify-center">
+                {isActive ? item.activeSvg : item.inactiveSvg}
+
+                {/* Floating badge only shows for My Bets when active bets exist */}
+                {isMyBets && isBetActive && (
+                  <span className="absolute top-[2px] -right-1.75 border border-[#282828] flex h-4 w-4 items-center justify-center rounded-full bg-[#58d7af] text-center text-[9px] font-bold text-[#505050]">
+                    {bet_data_check}
+                  </span>
+                )}
+              </div>
+
               <span className={cn('mt-1', isActive ? 'text-[#00ffb6]' : 'text-white')}>
                 {item.label}
               </span>
             </div>
           );
         })}
-
-        <div
-          className={cn(
-            'absolute top-[3px] right-33.75 border border-[#282828] flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#58d7af] text-center text-[10px] leading-[17px] font-bold text-[#505050]',
-            isBetActive ? 'flex' : 'hidden',
-          )}
-        >
-          1
-        </div>
       </div>
     </footer>
   );
