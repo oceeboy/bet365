@@ -1,42 +1,54 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { BottomNavigation } from '../navigations/bottom-nav';
 import { Footer } from '../navigations/footer';
 import { HeaderComp } from '../shared';
 import { cn } from 'cn';
+import { formatMoney } from '../bet/bet-ticket.config';
+import { profile_data } from '@/constants/profile-data';
 
 export function MainRootLayout({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  useEffect(() => {
+    // Keep the loading screen visible for at least 5 seconds
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    // Clean up timeout on component unmount
+    return () => clearTimeout(timer);
+  }, []);
   if (isLoading) {
     return (
-      <div>
-        <header className="hgr-background sticky top-0 z-[100] min-w-[320px] h-12 lg:h-17.5 overflow-hidden transition-all duration-200">
-          <div className="max-w-7xl mx-auto px-3 md:px-4 h-full flex items-center justify-between">
-            {/* Logo Section */}
+      <div className="fixed inset-0 z-50 flex flex-col bg-[#111]">
+        {/* Header Skeleton / Preloader Header */}
+        <header className="hgr-background sticky top-0 z-[100] h-12 min-w-[320px] overflow-hidden transition-all duration-200 lg:h-17.5">
+          <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-3 md:px-4">
             <div className="flex items-center">
-              <button className="flex items-center cursor-pointer focus:outline-none">
+              <button className="flex cursor-pointer items-center focus:outline-none">
                 <img
-                  src={'/bet365_Logo_Inline.svg'}
+                  src="/bet365_Logo_Inline.svg"
                   alt="logo"
-                  className="w-20.25 object-contain box-border"
+                  className="w-20.25 box-border object-contain"
                 />
               </button>
             </div>
           </div>
         </header>
 
-        <div className="h-[calc(100%-50px)] bg-[#111]">
-          <div className="absolute left-1/2 top-1/2 my-[25px] box-border h-[45px] w-[45px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-solid border-white/20 border-l-[#28FFBB] animate-[bl-Spinner_0.6s_linear_infinite]" />
+        {/* Spinner Area */}
+        <div className="relative flex-1 flex items-center justify-center">
+          <div className="h-[45px] w-[45px] animate-spin rounded-full border-2 border-solid border-white/20 border-t-[#28FFBB]" />
         </div>
       </div>
     );
   }
-
   return (
     <section className="relative pb-[calc(64px+16px+env(safe-area-inset-bottom,0px))]">
       <HeaderComp triggerModal={() => setIsVisible(true)} />
@@ -132,20 +144,24 @@ export function MainRootLayout({ children }: { children: ReactNode }) {
                 </span>
               </div>
               <div className="mt-[89px] mb-[44px] text-[45px] font-bold text-center text-white">
-                $8.56
+                {formatMoney(profile_data.balance)}
               </div>
               <div className="grid grid-flow-row gap-y-[5px]">
                 <div className="grid h-[45px] grid-flow-col grid-cols-[1fr_auto] items-center">
                   <span className="grid grid-flow-row gap-0.5 text-base font-bold text-[#ddd]">
                     Withdrawable
                   </span>
-                  <span className="text-lg font-bold text-white">$8.56</span>
+                  <span className="text-lg font-bold text-white">
+                    {formatMoney(profile_data.withdrawable)}
+                  </span>
                 </div>
                 <div className="grid h-[45px] grid-flow-col grid-cols-[1fr_auto] items-center">
                   <span className="grid grid-flow-row gap-0.5 text-base font-bold text-[#ddd]">
                     Bet Credits
                   </span>
-                  <span className="text-lg font-bold text-white">$8.56</span>
+                  <span className="text-lg font-bold text-white">
+                    {formatMoney(profile_data.betCredits)}
+                  </span>
                 </div>
               </div>
               <div className="mt-[45px] grid grid-flow-col grid-cols-2 justify-center gap-x-[15px]">

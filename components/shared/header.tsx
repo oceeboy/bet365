@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
+import { profile_data } from '@/constants/profile-data';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { useId, useState } from 'react';
+import { formatMoney } from '../bet/bet-ticket.config';
 
 type ActionTabs = 'account' | 'alerts' | 'preferences';
 
@@ -84,7 +86,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                 )}
               >
                 <span className={cn('whitespace-nowrap text-white', isVisible && 'text-[#00ffb6]')}>
-                  £176,000.00
+                  {formatMoney(profile_data.balance)}
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,11 +145,11 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                             <div className="inline-block align-top text-[#404040]">
                               <div>
                                 <span className="block w-full text-[#404040] text-xs leading-4.25">
-                                  Ryanpicks33
+                                  {profile_data.name}
                                 </span>
                                 <span className="inline-flex w-full leading-[23px]">
                                   <span className="  text-[#404040] text-xl  leading-[23px] font-bold pr-[5px] inline-block ">
-                                    $8.56
+                                    {formatMoney(profile_data.balance)}
                                   </span>
                                   <div className="relative flex h-10 w-[18px] cursor-pointer items-center self-center">
                                     <span
@@ -287,7 +289,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                   Withdrawable
                                 </div>
                                 <div className="text-[15px] leading-5 font-bold text-[#404040]">
-                                  $8.56
+                                  {formatMoney(profile_data.withdrawable)}
                                 </div>
                               </div>
                             </div>
@@ -307,7 +309,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                                   Bet Credits
                                 </div>
                                 <div className="text-[15px] leading-5 font-bold text-[#404040]">
-                                  $0.00
+                                  {formatMoney(profile_data.betCredits)}
                                 </div>
                               </div>
                             </div>

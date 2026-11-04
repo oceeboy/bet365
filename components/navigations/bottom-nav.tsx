@@ -2,6 +2,9 @@
 
 import { cn } from 'cn';
 import { useRouter, usePathname } from 'next/navigation';
+import { formatMoney } from '../bet/bet-ticket.config';
+import { profile_data } from '@/constants/profile-data';
+import { bet_data } from '@/constants/bet-data';
 
 type BottomNavigationItems = {
   activeSvg: React.ReactNode;
@@ -15,7 +18,7 @@ const filterId = 'globe-filter-a';
 const pathId = 'globe-path-b';
 const bottom_navigation_items: BottomNavigationItems[] = [
   {
-    label: '£176,000.00',
+    label: `${formatMoney(profile_data.balance)}`,
     href: '/home',
     inactiveSvg: (
       <svg
@@ -331,6 +334,8 @@ export function BottomNavigation() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const bet_data_check = bet_data.filter((b) => b.status === 'pending').length;
+  const isBetActive = bet_data_check > 0; // update later to use totat
   return (
     <footer className="fixed inset-x-0 bottom-0 z-[999] md:hidden box-border w-full bg-[#282828] pb-[env(safe-area-inset-bottom,0px)] transition-all duration-200 ease-in">
       <div className="grid-auto-cols-[minmax(0,1fr)] grid-flow-col w-full grid justify-self-center max-w-[450px]">
@@ -351,6 +356,15 @@ export function BottomNavigation() {
             </div>
           );
         })}
+
+        <div
+          className={cn(
+            'absolute top-[3px] right-33.75 border border-[#282828] flex h-[17px] w-[17px] items-center justify-center rounded-full bg-[#58d7af] text-center text-[10px] leading-[17px] font-bold text-[#505050]',
+            isBetActive ? 'flex' : 'hidden',
+          )}
+        >
+          1
+        </div>
       </div>
     </footer>
   );
