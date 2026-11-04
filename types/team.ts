@@ -1,4 +1,4 @@
-type TeamKit = {
+declare type TeamKit = {
   id: string;
   type: 'home' | 'away' | 'third';
   image: string;
@@ -12,14 +12,16 @@ type TeamKit = {
   season?: string;
 };
 
-type Team = {
+declare type Leaague = '';
+
+declare type Team = {
   id: string;
   name: string;
   shortName: string;
   slug: string;
 
-  countryId: string;
-
+  countryId: string; // and league they play for
+  league: Leaague;
   assets: {
     logo: string;
     kits: TeamKit[];

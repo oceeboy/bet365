@@ -120,6 +120,7 @@ export function HeaderComp({ triggerModal }: { triggerModal: () => void }) {
                 onClick={() => setIsVisible(false)}
               >
                 <div
+                  onClick={(e) => e.stopPropagation()}
                   className={cn(
                     `fixed top-12 right-0 z-[9991] inline-block
   w-full max-w-[375px] max-h-screen

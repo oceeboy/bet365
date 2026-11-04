@@ -299,7 +299,9 @@ export function OpenTicketCard() {
                       <div className="inline-flex flex-[0_0_auto] items-center mr-1.25 box-border [unicode-bidi:isolate]">
                         <div className="relative inline-flex h-4 w-4 items-center box-border [unicode-bidi:isolate]">
                           <img
-                            src={'/Scunthorpe_third_2627_front.svg'}
+                            src={
+                              'https://content001.bet365.com/SoccerSilks/RealMadrid_Home_Front_2627.svg'
+                            }
                             alt=""
                             className="h-full w-full box-border [overflow-clip-margin:content-box] overflow-clip [-webkit-user-drag:none]"
                           />
