@@ -52,7 +52,7 @@ const scunthorpe = team('t4', 'Scunthorpe', '/Scunthorpe_third_2627_front.svg');
 const palmeiras = team(
   't5',
   'Palmeiras',
-  '	https://content001.bet365.com/SoccerSilks/Palmeiras_Home_Front_26.svg',
+  'https://content001.bet365.com/SoccerSilks/Palmeiras_Home_Front_26.svg',
 );
 const remo = team('t6', 'Remo', 'https://content001.bet365.com/SoccerSilks/Remo_Home_Front_26.svg');
 const botafogosp = team(
@@ -65,6 +65,12 @@ const londrina = team(
   't8',
   'Londrina',
   'https://content001.bet365.com/SoccerSilks/Londrina_Home_Front_2026.svg',
+);
+
+const cruzeiro = team(
+  't9',
+  'Cruzeiro',
+  'https://content001.bet365.com/SoccerSilks/Cruzeiro_Home_Front_26.svg',
 );
 
 export const bet_data: BetData[] = [

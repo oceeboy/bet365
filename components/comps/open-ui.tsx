@@ -5,7 +5,7 @@ import { BetTicketCard } from '../bet';
 export function OpendUi() {
   // for
   return (
-    <div className="px-2.5 flex flex-col pb-2.5">
+    <div className="px-2.5 flex flex-col pb-[200px]">
       {bet_data
         .filter((i) => i.status === 'pending')
         .map((bet) => (
