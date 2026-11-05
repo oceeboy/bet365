@@ -355,7 +355,7 @@ function FooterAction({
   if (kind === 'cashout-button') {
     return (
       <div className={wrapper}>
-        <button className="flex h-11.25 w-full items-center justify-center rounded-[5px] bg-[#008F5A] px-[10px]">
+        <button className="flex h-11.25 w-full items-center justify-center rounded-b-[5px] bg-[#008F5A] px-[10px]">
           <span className="flex flex-row-reverse flex-wrap items-center justify-center gap-x-2.5 text-[15px] leading-4.5 font-bold text-white">
             <span>{formatMoney(cashoutValue!)}</span>
             <span>{label}</span>
