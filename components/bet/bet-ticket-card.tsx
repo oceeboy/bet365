@@ -386,7 +386,7 @@ function FooterAction({
               ✓
             </span>
           )}
-          <span>{payout}</span>
+          <span>{payout} </span>
           <span>{label}</span>
         </div>
       </div>

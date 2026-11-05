@@ -75,7 +75,7 @@ export const BET_STATUS_CONFIG: Record<BetStatusData, BetStatusConfig> = {
     returnMuted: false,
     footer: 'cashout-button',
     footerLabel: 'Cash Out',
-    payout: (b) => b.returns,
+    payout: (b) => b.stake,
   },
   won,
   'partially-won': { ...won, pillLabel: 'Partially Won', badge: null },
