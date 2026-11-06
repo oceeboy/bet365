@@ -1,6 +1,6 @@
 export const profile_data = {
-  name: 'Oceeboi',
-  balance: 2700,
-  withdrawable: 2700,
+  name: 'Waddypicks7878',
+  balance: 2700 + 156000,
+  withdrawable: 2700 + 156000,
   betCredits: 0,
 };

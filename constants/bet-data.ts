@@ -79,177 +79,177 @@ export const bet_data: BetData[] = [
     id: 'bet-1',
     type: 'double',
     stake: 300,
-    returns: 60670,
-    status: 'pending',
+    returns: 156000,
+    status: 'won',
     selections: [
       selection(
         's1',
-        'Remo 2-1',
+        'Palmeiras 6-1',
         20,
-        'pending',
-        fixture('f1', palmeiras, remo, 'Thu 05 Nov', '18:30', 'pending'),
+        'won',
+        fixture('f1', palmeiras, remo, 'Thu 05 Nov', '18:30', 'finished', [6, 1]),
       ),
       selection(
         's2',
-        'Draw 2-2',
-        15,
-        'pending',
-        fixture('f2', botafogosp, londrina, 'Thu 05 Nov', '18:30', 'pending'),
+        'Botafogo SP 4-0',
+        26,
+        'won',
+        fixture('f2', botafogosp, londrina, 'Thu 05 Nov', '18:30', 'finished', [4, 0]),
       ),
     ],
   },
 
   // 2. one won, one live, one not started
-  {
-    id: 'bet-2',
-    type: 'multiple',
-    stake: 20,
-    returns: 480,
-    status: 'lost',
-    selections: [
-      selection(
-        's3',
-        'Worthing 2-1',
-        3.5,
-        'won',
-        fixture('f3', worthing, southend, 'Mon 26 Oct', '15:00', 'finished', [2, 1]),
-      ),
-      selection(
-        's4',
-        'Draw 2-2',
-        4,
-        'pending',
-        fixture('f4', tamworth, scunthorpe, 'Mon 26 Oct', '16:30', 'live', [1, 1]),
-      ),
-      selection(
-        's5',
-        'Over 2.5 Goals',
-        1.9,
-        'pending',
-        fixture('f5', worthing, scunthorpe, 'Mon 26 Oct', '18:00', 'pending'),
-        'over/under',
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-2',
+  //     type: 'multiple',
+  //     stake: 20,
+  //     returns: 480,
+  //     status: 'lost',
+  //     selections: [
+  //       selection(
+  //         's3',
+  //         'Worthing 2-1',
+  //         3.5,
+  //         'won',
+  //         fixture('f3', worthing, southend, 'Mon 26 Oct', '15:00', 'finished', [2, 1]),
+  //       ),
+  //       selection(
+  //         's4',
+  //         'Draw 2-2',
+  //         4,
+  //         'pending',
+  //         fixture('f4', tamworth, scunthorpe, 'Mon 26 Oct', '16:30', 'live', [1, 1]),
+  //       ),
+  //       selection(
+  //         's5',
+  //         'Over 2.5 Goals',
+  //         1.9,
+  //         'pending',
+  //         fixture('f5', worthing, scunthorpe, 'Mon 26 Oct', '18:00', 'pending'),
+  //         'over/under',
+  //       ),
+  //     ],
+  //   },
 
   // 3. all won
-  {
-    id: 'bet-3',
-    type: 'double',
-    stake: 0.1,
-    returns: 0.1,
-    status: 'won',
-    selections: [
-      selection(
-        's6',
-        'Worthing 2-1',
-        11,
-        'won',
-        fixture('f6', worthing, southend, 'Sun 25 Oct', '14:00', 'finished', [2, 1]),
-      ),
-      selection(
-        's7',
-        'Draw 2-2',
-        11,
-        'won',
-        fixture('f7', tamworth, scunthorpe, 'Sun 25 Oct', '16:30', 'finished', [2, 2]),
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-3',
+  //     type: 'double',
+  //     stake: 0.1,
+  //     returns: 0.1,
+  //     status: 'won',
+  //     selections: [
+  //       selection(
+  //         's6',
+  //         'Worthing 2-1',
+  //         11,
+  //         'won',
+  //         fixture('f6', worthing, southend, 'Sun 25 Oct', '14:00', 'finished', [2, 1]),
+  //       ),
+  //       selection(
+  //         's7',
+  //         'Draw 2-2',
+  //         11,
+  //         'won',
+  //         fixture('f7', tamworth, scunthorpe, 'Sun 25 Oct', '16:30', 'finished', [2, 2]),
+  //       ),
+  //     ],
+  //   },
 
   // 4. backend is stale ('pending') but a leg lost
-  {
-    id: 'bet-4',
-    type: 'double',
-    stake: 0.1,
-    returns: 0.1,
-    status: 'lost',
-    selections: [
-      selection(
-        's8',
-        'Worthing 2-1',
-        11,
-        'lost',
-        fixture('f8', worthing, southend, 'Sat 24 Oct', '15:00', 'finished', [3, 3]),
-      ),
-      selection(
-        's9',
-        'Draw 2-2',
-        11,
-        'won',
-        fixture('f9', tamworth, scunthorpe, 'Sat 24 Oct', '17:30', 'finished', [2, 2]),
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-4',
+  //     type: 'double',
+  //     stake: 0.1,
+  //     returns: 0.1,
+  //     status: 'lost',
+  //     selections: [
+  //       selection(
+  //         's8',
+  //         'Worthing 2-1',
+  //         11,
+  //         'lost',
+  //         fixture('f8', worthing, southend, 'Sat 24 Oct', '15:00', 'finished', [3, 3]),
+  //       ),
+  //       selection(
+  //         's9',
+  //         'Draw 2-2',
+  //         11,
+  //         'won',
+  //         fixture('f9', tamworth, scunthorpe, 'Sat 24 Oct', '17:30', 'finished', [2, 2]),
+  //       ),
+  //     ],
+  //   },
 
   // 5. every leg void
-  {
-    id: 'bet-5',
-    type: 'single',
-    stake: 50,
-    returns: 0,
-    status: 'void',
-    selections: [
-      selection(
-        's10',
-        'Worthing to Win',
-        2.1,
-        'void',
-        fixture('f10', worthing, southend, 'Fri 23 Oct', '19:45', 'finished', [0, 0]),
-        'match result',
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-5',
+  //     type: 'single',
+  //     stake: 50,
+  //     returns: 0,
+  //     status: 'void',
+  //     selections: [
+  //       selection(
+  //         's10',
+  //         'Worthing to Win',
+  //         2.1,
+  //         'void',
+  //         fixture('f10', worthing, southend, 'Fri 23 Oct', '19:45', 'finished', [0, 0]),
+  //         'match result',
+  //       ),
+  //     ],
+  //   },
 
   // 6. backend says cashout while legs are still open
-  {
-    id: 'bet-6',
-    type: 'double',
-    stake: 0.1,
-    returns: 0.1,
-    status: 'cashout',
-    selections: [
-      selection(
-        's11',
-        'Worthing 2-1',
-        11,
-        'won',
-        fixture('f11', worthing, southend, 'Mon 26 Oct', '13:00', 'finished', [2, 1]),
-      ),
-      selection(
-        's12',
-        'Draw 2-2',
-        11,
-        'pending',
-        fixture('f12', tamworth, scunthorpe, 'Mon 26 Oct', '15:30', 'live', [0, 1]),
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-6',
+  //     type: 'double',
+  //     stake: 0.1,
+  //     returns: 0.1,
+  //     status: 'cashout',
+  //     selections: [
+  //       selection(
+  //         's11',
+  //         'Worthing 2-1',
+  //         11,
+  //         'won',
+  //         fixture('f11', worthing, southend, 'Mon 26 Oct', '13:00', 'finished', [2, 1]),
+  //       ),
+  //       selection(
+  //         's12',
+  //         'Draw 2-2',
+  //         11,
+  //         'pending',
+  //         fixture('f12', tamworth, scunthorpe, 'Mon 26 Oct', '15:30', 'live', [0, 1]),
+  //       ),
+  //     ],
+  //   },
 
   // 7. backend wrongly says 'won' with a leg still pending
-  {
-    id: 'bet-7',
-    type: 'double',
-    stake: 10,
-    returns: 120,
-    status: 'won',
-    selections: [
-      selection(
-        's13',
-        'Worthing 2-1',
-        6,
-        'won',
-        fixture('f13', worthing, southend, 'Thu 22 Oct', '16:00', 'finished', [2, 1]),
-      ),
-      selection(
-        's14',
-        'Draw 2-2',
-        2,
-        'pending',
-        fixture('f14', tamworth, scunthorpe, 'Thu 22 Oct', '18:30', 'pending'),
-      ),
-    ],
-  },
+  //   {
+  //     id: 'bet-7',
+  //     type: 'double',
+  //     stake: 10,
+  //     returns: 120,
+  //     status: 'won',
+  //     selections: [
+  //       selection(
+  //         's13',
+  //         'Worthing 2-1',
+  //         6,
+  //         'won',
+  //         fixture('f13', worthing, southend, 'Thu 22 Oct', '16:00', 'finished', [2, 1]),
+  //       ),
+  //       selection(
+  //         's14',
+  //         'Draw 2-2',
+  //         2,
+  //         'pending',
+  //         fixture('f14', tamworth, scunthorpe, 'Thu 22 Oct', '18:30', 'pending'),
+  //       ),
+  //     ],
+  //   },
 ];
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
