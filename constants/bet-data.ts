@@ -73,28 +73,43 @@ const cruzeiro = team(
   'https://content001.bet365.com/SoccerSilks/Cruzeiro_Home_Front_26.svg',
 );
 
+const ab = team('t10', 'AB', 'https://content001.bet365.com/SoccerSilks/AB_Home_Front_2627.svg');
+const vendsysselff = team(
+  't11',
+  'Vendsyssel FF',
+  'https://content001.bet365.com/SoccerSilks/Vendsyseel%20_Home_Front_2627.svg',
+);
+
+const hbkøge = team(
+  't12',
+  'HB Køge',
+  'https://content001.bet365.com/SoccerSilks/HBKoge_Home_Front_2627.svg',
+);
+
+const aab = team('t13', 'AaB', 'https://content001.bet365.com/SoccerSilks/AaB_Home_Front_2627.svg');
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 300,
+    stake: 250,
     returns: 156000,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'Palmeiras 6-1',
+        'Draw 3-3',
         20,
-        'won',
-        fixture('f1', palmeiras, remo, 'Thu 05 Nov', '18:30', 'finished', [6, 1]),
+        'pending',
+        fixture('f1', ab, vendsysselff, 'Fri 06 Nov', '19:00', 'pending', [6, 1]),
       ),
       selection(
         's2',
-        'Botafogo SP 4-0',
+        'Draw 2-2',
         26,
-        'won',
-        fixture('f2', botafogosp, londrina, 'Thu 05 Nov', '18:30', 'finished', [4, 0]),
+        'pending',
+        fixture('f2', hbkøge, aab, 'Fri 06 Nov', '19:00', 'pending', [4, 0]),
       ),
     ],
   },
@@ -254,7 +269,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 300.0,
+  'bet-1': 250.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
