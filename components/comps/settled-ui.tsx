@@ -9,7 +9,7 @@ export function SettledUi() {
   // for
   return (
     <section>
-      <div className="px-2.5 flex flex-col pb-2.5">
+      <div className="px-2.5 flex flex-col pb-[200px]">
         {bet_data.map((bet) => (
           <BetTicketCard key={bet.id} bet={bet} cashoutValue={cashout_offers[bet.id]} />
         ))}
