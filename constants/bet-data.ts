@@ -88,28 +88,51 @@ const hbkøge = team(
 
 const aab = team('t13', 'AaB', 'https://content001.bet365.com/SoccerSilks/AaB_Home_Front_2627.svg');
 
+const cuiaba = team(
+  't14',
+  'Cuiaba',
+  'https://content001.bet365.com/SoccerSilks/Cuiaba%20Home%2024-25.svg',
+);
+
+const juventude = team(
+  't15',
+  'Juventude',
+  'https://content001.bet365.com/SoccerSilks/Juventude_Home_Front_2026.svg',
+);
+
+const vilanova = team(
+  't15',
+  'Vila Nova',
+  'https://content001.bet365.com/SoccerSilks/Vila%20Nova_Home_Front_26.svg',
+);
+
+const criciuma = team(
+  't16',
+  'Criciuma',
+  'https://content001.bet365.com/SoccerSilks/Cruciuma_Home_Front_2026.svg',
+);
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 250,
+    stake: 400,
     returns: 33750,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'AB 3-0',
+        'Juventude 3-0',
         15,
-        'won',
-        fixture('f1', ab, vendsysselff, 'Fri 06 Nov', '19:00', 'finished', [3, 0]),
+        'pending',
+        fixture('f1', cuiaba, juventude, 'Sat 07 Nov', '18:00', 'pending', [3, 0]),
       ),
       selection(
         's2',
         'Draw 1-1',
         9,
-        'won',
-        fixture('f2', hbkøge, aab, 'Fri 06 Nov', '19:00', 'finished', [1, 1]),
+        'pending',
+        fixture('f2', vilanova, criciuma, 'Sat 07 Nov', '18:00', 'pending', [1, 1]),
       ),
     ],
   },
@@ -269,7 +292,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 250.0,
+  'bet-1': 400.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
