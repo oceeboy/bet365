@@ -113,7 +113,7 @@ export const SELECTION_TYPE_LABEL: Record<SelectionTypes['matchSelectionType'], 
 
 const money = new Intl.NumberFormat('en-US', {
   style: 'currency',
-  currency: 'USD',
+  currency: 'GBP',
 });
 
 export const formatMoney = (n: number) => money.format(n);
