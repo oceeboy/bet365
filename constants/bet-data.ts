@@ -135,10 +135,75 @@ const cavese = team(
   'Cavese',
   '	https://content001.bet365.com/SoccerSilks/Cavese_Home_2627_Front.svg',
 );
+
+// 11.11.26
+const platense_reserves = team(
+  't21',
+  'Platense Reserves',
+  '	https://content001.bet365.com/SoccerSilks/CA_Platense_Home_Front_2026.svg',
+);
+
+const deportivo_riestra_reserves = team(
+  't22',
+  'Deportivo Riestra Reserves',
+  '	https://content001.bet365.com/SoccerSilks/Generic_Solid_Black_Front.svg',
+);
+
+const instituto_cordoba_reserves = team(
+  't23',
+  'Instituto Cordoba Reserves',
+  'https://content001.bet365.com/SoccerSilks/Instituto_Home_Front_26.svg',
+);
+
+const san_lorenzo_reserves = team(
+  't24',
+  'San Lorenzo Reserves',
+  'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Stripes_Red_Blue_Front.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
+    type: 'double',
+    stake: 400,
+    returns: 45000,
+    status: 'pending',
+    selections: [
+      selection(
+        's1',
+        'San Lorenzo Reserves 1-0',
+        10,
+        'pending',
+        fixture(
+          'f1',
+          instituto_cordoba_reserves,
+          san_lorenzo_reserves,
+          'Wed 11 Nov',
+          '13:00',
+          'pending',
+          [0, 1],
+        ),
+      ),
+      selection(
+        's2',
+        'Draw 2-2',
+        15,
+        'pending',
+        fixture(
+          'f2',
+          platense_reserves,
+          deportivo_riestra_reserves,
+          'Wed 11 Nov',
+          '13:00',
+          'pending',
+          [2, 2],
+        ),
+      ),
+    ],
+  },
+  {
+    id: 'bet-2',
     type: 'double',
     stake: 300,
     returns: 45000,
@@ -316,7 +381,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 300.0,
+  'bet-1': 400.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
