@@ -161,44 +161,54 @@ const san_lorenzo_reserves = team(
   'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Stripes_Red_Blue_Front.svg',
 );
 
+// 13.11.
+
+const fc_roskilde = team(
+  't25',
+  'FC Roskilde',
+  'https://content001.bet365.com/SoccerSilks/Generic_Stripes_Blue_White_Front.svg',
+);
+
+const nykobing = team(
+  't26',
+  'Nykobing',
+  'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Solid_Green_Front.svg',
+);
+
+const skive = team(
+  't27',
+  'Skive',
+  'https://content001.bet365.com/SoccerSilks/Generic_Solid_Yellow_Front.svg',
+);
+
+const thisted_fc = team(
+  't28',
+  'Thisted FC',
+  'https://content001.bet365.com/SoccerSilks/Generic_Stripes_Blue_White_Front.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 400,
-    returns: 102000,
-    status: 'won',
+    stake: 200,
+    returns: 25000,
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'Instituto Cordoba Reserves 2-1',
+        'Nykobing 2-1',
         17,
-        'won',
-        fixture(
-          'f1',
-          instituto_cordoba_reserves,
-          san_lorenzo_reserves,
-          'Wed 11 Nov',
-          '13:00',
-          'finished',
-          [2, 1],
-        ),
+        'pending',
+        fixture('f1', fc_roskilde, nykobing, 'Fri 13 Nov', '18:00', 'pending', [2, 1]),
       ),
       selection(
         's2',
-        'Deportivo Riestra Reserves 2-0',
+        'Thisted FC 2-0',
         15,
-        'won',
-        fixture(
-          'f2',
-          platense_reserves,
-          deportivo_riestra_reserves,
-          'Wed 11 Nov',
-          '13:00',
-          'finished',
-          [0, 2],
-        ),
+        'pending',
+        fixture('f2', skive, thisted_fc, 'Fri 13 Nov', '18:00', 'pending', [0, 2]),
       ),
     ],
   },
