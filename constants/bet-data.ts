@@ -391,7 +391,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 400.0,
+  'bet-1': 200.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
