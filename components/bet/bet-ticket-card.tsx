@@ -169,7 +169,7 @@ export function BetTicketCard({
   bet: BetData;
   cashoutValue?: number; // live cash-out offer, only used while pending
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const status = useMemo(() => deriveBetStatus(bet), [bet]);
   const ui = BET_STATUS_CONFIG[status];

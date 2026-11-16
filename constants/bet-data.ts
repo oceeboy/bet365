@@ -6,7 +6,7 @@ import type {
   SelectionTypes,
 } from '@/constants/bet';
 
-const team = (id: string, name: string, logo = ''): Team => ({
+export const team = (id: string, name: string, logo = ''): Team => ({
   id,
   name,
   shortName: name,
@@ -17,7 +17,7 @@ const team = (id: string, name: string, logo = ''): Team => ({
   competitionIds: [],
 });
 
-const fixture = (
+export const fixture = (
   id: string,
   home: Team,
   away: Team,
@@ -36,7 +36,7 @@ const fixture = (
   status,
 });
 
-const selection = (
+export const selection = (
   id: string,
   name: string,
   odds: number,
@@ -187,28 +187,54 @@ const thisted_fc = team(
   'https://content001.bet365.com/SoccerSilks/Generic_Stripes_Blue_White_Front.svg',
 );
 
+// 17.11.26
+
+const bedford_town = team(
+  't2',
+  'Bedford Town',
+  'https://content001.bet365.com/SoccerSilks/BedfordTown_Home_Front_2627.svg',
+);
+
+const chorley = team(
+  't3',
+  'Chorley',
+  'https://content001.bet365.com/SoccerSilks/Soccer_generic_stripes_black_white_front.svg',
+);
+
+const spennymoor_town = team(
+  't4',
+  'Spennymoor Town',
+  'https://content001.bet365.com/SoccerSilks/Spennymoor_Home_Front_2627.svg',
+);
+
+const chester = team(
+  't5',
+  'Chester',
+  'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Stripes_Blue_White_Front.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 200,
+    stake: 250,
     returns: 23400,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'FC Roskilde 2-1',
+        'Draw 1-1',
         9,
-        'won',
-        fixture('f1', fc_roskilde, nykobing, 'Fri 13 Nov', '18:00', 'finished', [2, 1]),
+        'pending',
+        fixture('f1', bedford_town, chorley, 'Tue 17 Nov', '19:45', 'pending', [2, 1]),
       ),
       selection(
         's2',
-        'Thisted FC 2-1',
+        'Draw 2-2',
         13,
-        'won',
-        fixture('f2', skive, thisted_fc, 'Fri 13 Nov', '18:00', 'finished', [1, 2]),
+        'pending',
+        fixture('f2', spennymoor_town, chester, 'Tue 17 Nov', '19:45', 'pending', [1, 2]),
       ),
     ],
   },
@@ -391,7 +417,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 200.0,
+  'bet-1': 250.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
