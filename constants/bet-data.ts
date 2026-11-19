@@ -213,28 +213,52 @@ const chester = team(
   'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Stripes_Blue_White_Front.svg',
 );
 
+const aarhus_fremad = team(
+  't1',
+  'Aarhus Fremad',
+  'https://content001.bet365.com/SoccerSilks/Aarhus_Fremad_Home_Front_2627.svg',
+);
+
+const hobro_ik = team(
+  't2',
+  'Hobro IK',
+  'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Solid_Yellow_Front.svg',
+);
+
+const kolding_if = team(
+  't3',
+  'Kolding IF',
+  'https://content001.bet365.com/SoccerSilks/Kolding_Home_Front_2627.svg',
+);
+
+const aab_team = team(
+  't4',
+  'AaB',
+  'https://content001.bet365.com/SoccerSilks/AaB_Home_Front_2627.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 250,
+    stake: 300,
     returns: 62500,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'Chorley 2-1',
+        'Draw 1-1',
         10,
-        'won',
-        fixture('f1', bedford_town, chorley, 'Tue 17 Nov', '19:45', 'finished', [1, 2]),
+        'pending',
+        fixture('f1', aarhus_fremad, hobro_ik, 'Fri 20 Nov', '18:00', 'pending', [1, 2]),
       ),
       selection(
         's2',
-        'Chester 5-0',
+        'Draw 2-2',
         25,
-        'won',
-        fixture('f2', spennymoor_town, chester, 'Tue 17 Nov', '19:45', 'finished', [0, 5]),
+        'pending',
+        fixture('f2', kolding_if, aab_team, 'Fri 20 Nov', '18:00', 'pending', [0, 5]),
       ),
     ],
   },
@@ -417,7 +441,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 250.0,
+  'bet-1': 300.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
