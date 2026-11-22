@@ -281,7 +281,7 @@ export const bet_data: BetData[] = [
         'Draw 1-1',
         6.5,
         'pending',
-        fixture('f2', lommel, standard_liege, 'Sun 22 Nov', '17:30', 'pending', [1, 1]),
+        fixture('f2', lommel, standard_liege, 'Sun 22 Nov', '18:15', 'pending', [1, 1]),
       ),
     ],
   },
