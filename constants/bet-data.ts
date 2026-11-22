@@ -237,28 +237,51 @@ const aab_team = team(
   'https://content001.bet365.com/SoccerSilks/AaB_Home_Front_2627.svg',
 );
 
+const anderlecht = team(
+  't1',
+  'Anderlecht',
+  'https://content001.bet365.com/SoccerSilks/Anderlecht_Home_Front_25_26.svg',
+);
+const oh_leuven = team(
+  't2',
+  'OH Leuven',
+  'https://content001.bet365.com/SoccerSilks/Leuven_Home_Front_26_27.svg',
+);
+
+const lommel = team(
+  't3',
+  'Lommel',
+  'https://content001.bet365.com/SoccerSilks/Lommel_Home_Front_2627.svg',
+);
+
+const standard_liege = team(
+  't4',
+  'Standard Liege',
+  'https://content001.bet365.com/SoccerSilks/Standard_Liege_Home_Front_26_27.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 300,
+    stake: 150,
     returns: 13650,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
         'Draw 1-1',
         7,
-        'won',
-        fixture('f1', aarhus_fremad, hobro_ik, 'Fri 20 Nov', '18:00', 'finished', [1, 1]),
+        'pending',
+        fixture('f1', anderlecht, oh_leuven, 'Sun 22 Nov', '17:30', 'pending', [1, 1]),
       ),
       selection(
         's2',
         'Draw 1-1',
         6.5,
-        'won',
-        fixture('f2', kolding_if, aab_team, 'Fri 20 Nov', '18:00', 'finished', [1, 1]),
+        'pending',
+        fixture('f2', lommel, standard_liege, 'Sun 22 Nov', '17:30', 'pending', [1, 1]),
       ),
     ],
   },
@@ -441,7 +464,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 300.0,
+  'bet-1': 150.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
