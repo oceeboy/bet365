@@ -8,35 +8,35 @@ import { useState } from 'react';
 type TabType = 'Open' | 'Live' | 'Settled';
 
 const cashout_offers: Record<string, number> = {
-  'bet-1': 200.0,
+  'bet-1': 300.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
 
 // 13.11.
 
-const fc_roskilde = team(
+const home_1 = team(
   't25',
-  'FC Roskilde',
-  'https://content001.bet365.com/SoccerSilks/Generic_Stripes_Blue_White_Front.svg',
+  'Botafogo',
+  'https://content001.bet365.com/SoccerSilks/Botafogo_Front_Home_25_26.svg',
 );
 
-const nykobing = team(
+const away_1 = team(
   't26',
-  'Nykobing',
-  'https://content001.bet365.com/SoccerSilks/Soccer_Generic_Solid_Green_Front.svg',
+  'Sao Paulo',
+  'https://content001.bet365.com/SoccerSilks/SaoPaulo_Home_Front_2026.svg',
 );
 
-const skive = team(
+const home_2 = team(
   't27',
-  'Skive',
-  'https://content001.bet365.com/SoccerSilks/Generic_Solid_Yellow_Front.svg',
+  'Santos',
+  'https://content001.bet365.com/SoccerSilks/Santos%20home_front_25_26.svg',
 );
 
-const thisted_fc = team(
+const away_2 = team(
   't28',
-  'Thisted FC',
-  'https://content001.bet365.com/SoccerSilks/Generic_Stripes_Blue_White_Front.svg',
+  'Gremio',
+  'https://content001.bet365.com/SoccerSilks/Gremio_Home_Front_2026.svg',
 );
 
 export function CashoutPage({ word }: { word?: string }) {
@@ -46,24 +46,24 @@ export function CashoutPage({ word }: { word?: string }) {
     // 1. every leg pending, match not started -> PENDING
     {
       id: 'bet-1',
-      type: 'single',
-      stake: 200,
+      type: 'double',
+      stake: 300,
       returns: 23400,
       status: 'pending',
       selections: [
-        // selection(
-        //   's1',
-        //   `${word}`,
-        //   9,
-        //   'pending',
-        //   fixture('f1', fc_roskilde, nykobing, 'Fri 13 Nov', '18:00', 'pending', [2, 1]),
-        // ),
+        selection(
+          's1',
+          `${word ? word : 'Draw 1-1'}`,
+          9,
+          'pending',
+          fixture('f1', home_1, away_1, 'Mon 23 Nov', '18:00', 'pending', [2, 1]),
+        ),
         selection(
           's2',
-          `${word}`,
+          `${word ? word : 'Draw 2-2'}`,
           13,
           'pending',
-          fixture('f2', skive, thisted_fc, 'Fri 13 Nov', '18:00', 'pending', [1, 2]),
+          fixture('f2', home_2, away_2, 'Mon 23 Nov', '19:00', 'pending', [1, 2]),
         ),
       ],
     };
