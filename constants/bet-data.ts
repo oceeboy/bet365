@@ -260,28 +260,53 @@ const standard_liege = team(
   'https://content001.bet365.com/SoccerSilks/Standard_Liege_Home_Front_26_27.svg',
 );
 
+// tue 24 nov 2026
+const crawley_town = team(
+  't1',
+  'Crawley Town',
+  'https://content001.bet365.com/SoccerSilks/Crawley_Home_Front_2627.svg',
+);
+
+const barnet = team(
+  't2',
+  'Barnet',
+  'https://content001.bet365.com/SoccerSilks/Barnet_Home_Front_2627.svg',
+);
+
+const port_vale = team(
+  't1',
+  'Port Vale',
+  'https://content001.bet365.com/SoccerSilks/Port_Vale_Home_Front_26_27.svg',
+);
+
+const northampton = team(
+  't2',
+  'Northampton',
+  'https://content001.bet365.com/SoccerSilks/Northampton_Home_Front_2627.svg',
+);
+
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 150,
+    stake: 350,
     returns: 20250,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
-        'Anderlecht 1-0',
+        'Draw 1-1',
         9,
-        'won',
-        fixture('f1', anderlecht, oh_leuven, 'Sun 22 Nov', '17:30', 'finished', [1, 0]),
+        'pending',
+        fixture('f1', crawley_town, barnet, 'Tue 24 Nov', '19:45', 'pending', [1, 1]),
       ),
       selection(
         's2',
-        'Standard Liege 2-1',
+        'Draw 2-2',
         15,
-        'won',
-        fixture('f2', lommel, standard_liege, 'Sun 22 Nov', '18:15', 'finished', [1, 2]),
+        'pending',
+        fixture('f2', port_vale, northampton, 'Tue 24 Nov', '19:45', 'pending', [2, 2]),
       ),
     ],
   },
@@ -464,7 +489,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 150.0,
+  'bet-1': 350.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
