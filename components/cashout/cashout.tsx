@@ -17,26 +17,26 @@ const cashout_offers: Record<string, number> = {
 
 const home_1 = team(
   't25',
-  'Botafogo',
-  'https://content001.bet365.com/SoccerSilks/Botafogo_Front_Home_25_26.svg',
+  'Padova',
+  'https://content001.bet365.com/SoccerSilks/Padova_Home_Front_26_27.svg',
 );
 
 const away_1 = team(
   't26',
-  'Sao Paulo',
-  'https://content001.bet365.com/SoccerSilks/SaoPaulo_Home_Front_2026.svg',
+  'Sampdoria',
+  'https://content001.bet365.com/SoccerSilks/Sampdoria_Home_Front_25_26.svg',
 );
 
 const home_2 = team(
   't27',
-  'Santos',
-  'https://content001.bet365.com/SoccerSilks/Santos%20home_front_25_26.svg',
+  'Pisa',
+  'https://content001.bet365.com/SoccerSilks/Pisa_Home_2627_Front.svg',
 );
 
 const away_2 = team(
   't28',
-  'Gremio',
-  'https://content001.bet365.com/SoccerSilks/Gremio_Home_Front_2026.svg',
+  'Modena',
+  'https://content001.bet365.com/SoccerSilks/Modena_third_2627_front.svg',
 );
 
 export function CashoutPage({ word }: { word?: string }) {
@@ -49,21 +49,21 @@ export function CashoutPage({ word }: { word?: string }) {
       type: 'double',
       stake: 300,
       returns: 65100,
-      status: 'won',
+      status: 'pending',
       selections: [
         selection(
           's1',
           `Draw 1-1`,
           7,
-          'won',
-          fixture('f1', home_1, away_1, 'Mon 23 Nov', '18:00', 'finished', [1, 1]),
+          'pending',
+          fixture('f1', home_1, away_1, 'Wed 25 Nov', '14:00', 'pending', [1, 1]),
         ),
         selection(
           's2',
           `${'Gremio 2-0'}`,
           31,
-          'won',
-          fixture('f2', home_2, away_2, 'Mon 23 Nov', '19:00', 'finished', [0, 2]),
+          'pending',
+          fixture('f2', home_2, away_2, 'Wed 25 Nov', '14:00', 'pending', [0, 2]),
         ),
       ],
     };
