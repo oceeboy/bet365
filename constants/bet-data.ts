@@ -285,28 +285,51 @@ const northampton = team(
   'https://content001.bet365.com/SoccerSilks/Northampton_Home_Front_2627.svg',
 );
 
+const ab_team = team(
+  't1',
+  'AB',
+  '	https://content001.bet365.com/SoccerSilks/AB_Home_Front_2627.svg',
+);
+
+const vejle = team(
+  't2',
+  'Vejle',
+  '	https://content001.bet365.com/SoccerSilks/Vejle_Home_Front_2627.svg',
+);
+
+const hvidovre_if = team(
+  't3',
+  'Hvidovre IF',
+  'https://content001.bet365.com/SoccerSilks/Hvidovre_Home_Front_26_27.svg',
+);
+
+const kolding_if_team = team(
+  't4',
+  'Kolding IF',
+  'https://content001.bet365.com/SoccerSilks/Kolding_Home_Front_2627.svg',
+);
 export const bet_data: BetData[] = [
   // 1. every leg pending, match not started -> PENDING
   {
     id: 'bet-1',
     type: 'double',
-    stake: 350,
+    stake: 300,
     returns: 34650,
-    status: 'won',
+    status: 'pending',
     selections: [
       selection(
         's1',
         'Draw 0-0',
         11,
-        'won',
-        fixture('f1', crawley_town, barnet, 'Tue 24 Nov', '19:45', 'finished', [0, 0]),
+        'pending',
+        fixture('f1', ab_team, vejle, 'Fri 27 Nov', '18:00', 'pending', [0, 0]),
       ),
       selection(
         's2',
         'Draw 1-1',
         9,
-        'won',
-        fixture('f2', port_vale, northampton, 'Tue 24 Nov', '19:45', 'finished', [1, 1]),
+        'pending',
+        fixture('f2', hvidovre_if, kolding_if_team, 'Fri 27 Nov', '18:00', 'pending', [1, 1]),
       ),
     ],
   },
@@ -489,7 +512,7 @@ export const bet_data: BetData[] = [
 
 // live cash-out offers keyed by bet id (comes from your odds/cashout service, not BetData)
 export const cashout_offers: Record<string, number> = {
-  'bet-1': 350.0,
+  'bet-1': 300.0,
   'bet-2': 41.5,
   'bet-7': 18.2,
 };
